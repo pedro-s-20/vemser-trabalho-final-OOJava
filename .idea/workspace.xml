@@ -7,15 +7,7 @@
     <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrativos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrativos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aluguel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Estudantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estudantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fisico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fisico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gestores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gestores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Livro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Online.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Online.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Professores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Professores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Usuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipulacaoDeObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipulacaoDeObjetos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
