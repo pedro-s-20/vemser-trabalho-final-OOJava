@@ -1,15 +1,15 @@
 public class ManipularUsuarios {
 
     public void adicionarUsuario(AcervoDaBiblioteca biblioteca, Usuarios usuario) {
-        biblioteca.listaDeUsuarios.add(usuario);
+        biblioteca.getListaDeUsuarios().add(usuario);
     }
 
     public void removerUsuarioPorIndice(AcervoDaBiblioteca biblioteca, int indice){
-        biblioteca.listaDeUsuarios.remove(indice);
+        biblioteca.getListaDeUsuarios().remove(indice);
     }
 
     public void editarUsuarios(AcervoDaBiblioteca biblioteca, int indice, Usuarios usuario){
-        Usuarios usuarioBusca = biblioteca.listaDeUsuarios.get(indice);
+        Usuarios usuarioBusca = biblioteca.getListaDeUsuarios().get(indice);
         usuarioBusca.setNome(usuario.getNome());
         usuarioBusca.setCpf(usuario.getCpf());
         usuarioBusca.setCep(usuario.getCep());
@@ -19,8 +19,8 @@ public class ManipularUsuarios {
     }
 
     public void listarUsuarios(AcervoDaBiblioteca biblioteca){
-        for(int i = 0; i < biblioteca.listaDeUsuarios.size(); i++){
-            System.out.println("id " + i + " - " + biblioteca.listaDeUsuarios.get(i));
+        for(int i = 0; i < biblioteca.getListaDeUsuarios().size(); i++){
+            System.out.println("id " + i + " - " + biblioteca.getListaDeUsuarios().get(i));
         }
     }
 

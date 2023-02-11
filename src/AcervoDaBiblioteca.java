@@ -1,15 +1,47 @@
 import java.util.ArrayList;
 import java.util.List;
 public class AcervoDaBiblioteca {
-    public List<Livro> livrosFisicos;
-    public List<Livro> ebooks;
-    public List<Usuarios> listaDeUsuarios;
-    public List<Aluguel> listaEmprestimos;
+    private List<Livro> livrosFisicos;
+    private List<Livro> ebooks;
+    private List<Usuarios> listaDeUsuarios;
+    private List<Aluguel> listaEmprestimos;
     public AcervoDaBiblioteca(){
         this.livrosFisicos = new ArrayList<>();
         this.ebooks = new ArrayList<>();
         this.listaDeUsuarios = new ArrayList<>();
         this.listaEmprestimos = new ArrayList<>();
+    }
+
+    public List<Livro> getLivrosFisicos() {
+        return livrosFisicos;
+    }
+
+    public void setLivrosFisicos(List<Livro> livrosFisicos) {
+        this.livrosFisicos = livrosFisicos;
+    }
+
+    public List<Livro> getEbooks() {
+        return ebooks;
+    }
+
+    public void setEbooks(List<Livro> ebooks) {
+        this.ebooks = ebooks;
+    }
+
+    public List<Usuarios> getListaDeUsuarios() {
+        return listaDeUsuarios;
+    }
+
+    public void setListaDeUsuarios(List<Usuarios> listaDeUsuarios) {
+        this.listaDeUsuarios = listaDeUsuarios;
+    }
+
+    public List<Aluguel> getListaEmprestimos() {
+        return listaEmprestimos;
+    }
+
+    public void setListaEmprestimos(List<Aluguel> listaEmprestimos) {
+        this.listaEmprestimos = listaEmprestimos;
     }
 
 }
