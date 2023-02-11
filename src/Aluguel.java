@@ -9,6 +9,31 @@ public class Aluguel{
     private double valorMulta;
     private Livro livroEmprestimo;
 
+    public int getQuantidadeDeDias() {
+        return quantidadeDeDias;
+    }
+
+    public void setQuantidadeDeDias(int quantidadeDeDias) {
+        this.quantidadeDeDias = quantidadeDeDias;
+    }
+
+    public Livro getLivroEmprestimo() {
+        return livroEmprestimo;
+    }
+
+    public void setLivroEmprestimo(Livro livroEmprestimo) {
+        this.livroEmprestimo = livroEmprestimo;
+    }
+
+    public String getIdLivro() {
+        return idLivro;
+    }
+
+    public void setIdLivro(String idLivro) {
+        this.idLivro = idLivro;
+    }
+
+
     public double getValorMulta() {
         return valorMulta;
     }
