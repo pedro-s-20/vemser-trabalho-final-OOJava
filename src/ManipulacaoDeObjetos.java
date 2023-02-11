@@ -42,5 +42,23 @@ public class ManipulacaoDeObjetos {
     public void removerEmprestimo(int idEmprestimo){
         this.emprestimos.remove(emprestimos);
     }
+
+    //Comando para editar objetos
+    public void editarLivrofisico(int indice, Livro livro){
+        Livro livroBusca = livrosFisicos.get(indice);
+        livroBusca.setTitulo(livro.getTitulo());
+        livroBusca.setGenero(livro.getGenero());
+        livroBusca.setAutor(livro.getAutor());
+        livroBusca.setEditora(livro.getEditora());
+        livroBusca.setTitulo(livro.getAno());
+    }
+    public void editarEbook(int indice, Livro livro){
+        Livro ebookBusca = ebooks.get(indice);
+        ebookBusca.setTitulo(livro.getTitulo());
+        ebookBusca.setGenero(livro.getGenero());
+        ebookBusca.setAutor(livro.getAutor());
+        ebookBusca.setEditora(livro.getEditora());
+        ebookBusca.setTitulo(livro.getAno());
+    }
 }
 
