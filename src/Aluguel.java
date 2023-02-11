@@ -1,4 +1,4 @@
-public class Aluguel extends Usuario implements Impressao {
+public class Aluguel extends Usuarios implements Impressao {
 
     private static final double MULTA_POR_ATRASO = 2;
 
@@ -14,7 +14,8 @@ public class Aluguel extends Usuario implements Impressao {
         this.idLivro = idLivro;
         this.calendario = calendario;
         this.quantidadeDeDias = quantidadeDeDias;
-        this.valorMulta = valorMulta;}
+        this.valorMulta = valorMulta;
+    }
 
 
     public String getIdLivro() {return idLivro;}

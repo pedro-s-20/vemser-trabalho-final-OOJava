@@ -1,4 +1,4 @@
-public class Professores extends Usuario implements Impressao {
+public class Professores extends Usuarios implements Impressao {
     private String matricula;
 
     public Professores(String nome, String cpf, String telefone, String logradouro, int numero, String cep, String matricula) {

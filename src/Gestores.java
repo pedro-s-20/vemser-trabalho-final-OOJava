@@ -1,4 +1,4 @@
-public class Gestores extends Usuario implements Impressao{
+public class Gestores extends Usuarios implements Impressao{
     private String matricula;
 
     public Gestores(String nome, String cpf, String telefone, String logradouro, int numero, String cep, String matricula) {

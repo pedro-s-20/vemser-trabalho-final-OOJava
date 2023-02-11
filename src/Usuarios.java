@@ -1,4 +1,4 @@
-public abstract class Usuario implements Impressao {
+public abstract class Usuarios implements Impressao {
     private String nome;
     private String cpf;
     private String telefone;
@@ -6,7 +6,7 @@ public abstract class Usuario implements Impressao {
     private int numero;
     private String cep;
 
-    public Usuario(String nome, String cpf, String telefone, String logradouro, int numero, String cep) {
+    public Usuarios(String nome, String cpf, String telefone, String logradouro, int numero, String cep) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;

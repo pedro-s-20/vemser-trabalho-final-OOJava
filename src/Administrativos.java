@@ -1,4 +1,4 @@
-public class Administrativos extends Usuario implements Impressao{
+public class Administrativos extends Usuarios implements Impressao{
     private String matricula;
 
     public Administrativos(String nome, String cpf, String telefone, String logradouro, int numero, String cep, String matricula) {
