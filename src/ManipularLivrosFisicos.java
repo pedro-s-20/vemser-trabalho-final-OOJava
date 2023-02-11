@@ -1,14 +1,20 @@
 public class ManipularLivrosFisicos {
 
-    public void adicionarLivroFisico(AcervoDaBiblioteca biblioteca, Livro livroFisico) {
+    AcervoDaBiblioteca biblioteca;
+
+    public ManipularLivrosFisicos(AcervoDaBiblioteca biblioteca){
+        this.biblioteca = biblioteca;
+    }
+
+    public void adicionarLivroFisico(Livro livroFisico) {
         biblioteca.getLivrosFisicos().add(livroFisico);
     }
 
-    public void removerLivroFisicoPorId(AcervoDaBiblioteca biblioteca, String idLivro){
+    public void removerLivroFisicoPorId(String idLivro){
         biblioteca.getLivrosFisicos().remove(idLivro);
     }
 
-    public void editarLivrofisico(AcervoDaBiblioteca biblioteca, int indice, Livro livro){
+    public void editarLivrofisico(int indice, Livro livro){
         Livro livroBusca = biblioteca.getLivrosFisicos().get(indice);
         livroBusca.setTitulo(livro.getTitulo());
         livroBusca.setGenero(livro.getGenero());
@@ -17,7 +23,7 @@ public class ManipularLivrosFisicos {
         livroBusca.setTitulo(livro.getAno());
     }
 
-    public void listarLivrosFisicos(AcervoDaBiblioteca biblioteca){
+    public void listarLivrosFisicos(){
         if(biblioteca.getListaEmprestimos().isEmpty()){
             System.out.println("Acervo de livros físicos vazio.");
         }{
@@ -25,7 +31,7 @@ public class ManipularLivrosFisicos {
         }
     }
 
-    public Livro buscaLivrosFisicos(AcervoDaBiblioteca biblioteca, int idLivro){
+    public Livro buscaLivrosFisicos(int idLivro){
         Livro livroBuscado = (Livro) biblioteca.getLivrosFisicos().stream().filter(livro -> livro.getIdLivro() == idLivro);
         return livroBuscado;
     }

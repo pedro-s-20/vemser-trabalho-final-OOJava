@@ -6,6 +6,11 @@ public class AcervoDaBiblioteca {
     private List<Usuario> listaDeUsuarios;
     private List<Aluguel> listaEmprestimos;
 
+    public ManipularAlugueis manipularAlugueis;
+    public ManipularEbooks manipularEbooks;
+    public ManipularLivrosFisicos manipularLivrosFisicos;
+    public ManipularUsuarios manipularUsuarios;
+
     private int contadorDeAlgueis;
     private int contadorDeLivros;
     private int contadorDeUsuarios;
@@ -15,6 +20,12 @@ public class AcervoDaBiblioteca {
         this.ebooks = new ArrayList<>();
         this.listaDeUsuarios = new ArrayList<>();
         this.listaEmprestimos = new ArrayList<>();
+
+        this.manipularAlugueis = new ManipularAlugueis(this);
+        this.manipularEbooks = new ManipularEbooks(this);
+        this.manipularLivrosFisicos = new ManipularLivrosFisicos(this);
+        this.manipularUsuarios = new ManipularUsuarios(this);
+
     }
 
     public List<Livro> getLivrosFisicos() {
@@ -72,4 +83,5 @@ public class AcervoDaBiblioteca {
     public void setContadorDeUsuarios(int contadorDeUsuarios) {
         this.contadorDeUsuarios = contadorDeUsuarios;
     }
+
 }

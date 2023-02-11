@@ -1,14 +1,20 @@
 public class ManipularUsuarios {
 
-    public void adicionarUsuario(AcervoDaBiblioteca biblioteca, Usuario usuario) {
+    AcervoDaBiblioteca biblioteca;
+
+    public ManipularUsuarios(AcervoDaBiblioteca biblioteca){
+        this.biblioteca = biblioteca;
+    }
+
+    public void adicionarUsuario(Usuario usuario) {
         biblioteca.getListaDeUsuarios().add(usuario);
     }
 
-    public void removerUsuarioPorIndice(AcervoDaBiblioteca biblioteca, int indice){
+    public void removerUsuarioPorIndice(int indice){
         biblioteca.getListaDeUsuarios().remove(indice);
     }
 
-    public void editarUsuarios(AcervoDaBiblioteca biblioteca, int indice, Usuario usuario){
+    public void editarUsuarios(int indice, Usuario usuario){
         Usuario usuarioBusca = biblioteca.getListaDeUsuarios().get(indice);
         usuarioBusca.setNome(usuario.getNome());
         usuarioBusca.setCpf(usuario.getCpf());
@@ -18,7 +24,7 @@ public class ManipularUsuarios {
         usuarioBusca.setTelefone(usuario.getTelefone());
     }
 
-    public void listarUsuarios(AcervoDaBiblioteca biblioteca){
+    public void listarUsuarios(){
         if(biblioteca.getListaEmprestimos().isEmpty()){
             System.out.println("Sem usuários cadastrados.");
         }{
@@ -26,7 +32,7 @@ public class ManipularUsuarios {
         }
     }
 
-    public Usuario buscaAluguel(AcervoDaBiblioteca biblioteca, String cpfUsuario){
+    public Usuario buscaAluguel(String cpfUsuario){
         String cpfUsuarioFormatado = cpfUsuario.replaceAll("[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]", "");
         Usuario usuariolUsuario = (Usuario) biblioteca.getListaDeUsuarios().stream().filter(Usuario -> Usuario.getCpf().equals(cpfUsuarioFormatado));
         return usuariolUsuario;

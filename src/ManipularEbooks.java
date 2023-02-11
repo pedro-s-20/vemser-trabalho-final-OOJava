@@ -2,15 +2,21 @@ import java.util.stream.Stream;
 
 public class ManipularEbooks {
 
-    public void adicionarEbook(AcervoDaBiblioteca biblioteca, Livro ebook) {
+    AcervoDaBiblioteca biblioteca;
+
+    public ManipularEbooks(AcervoDaBiblioteca biblioteca){
+        this.biblioteca = biblioteca;
+    }
+
+    public void adicionarEbook(Livro ebook) {
         biblioteca.getEbooks().add(ebook);
     }
 
-    public void removerEbook(AcervoDaBiblioteca biblioteca, String ebook){
+    public void removerEbook(String ebook){
         biblioteca.getLivrosFisicos().remove(ebook);
     }
 
-    public void editarEbook(AcervoDaBiblioteca biblioteca, int indice, Livro livro){
+    public void editarEbook(int indice, Livro livro){
         Livro ebookBusca = biblioteca.getEbooks().get(indice);
         ebookBusca.setTitulo(livro.getTitulo());
         ebookBusca.setGenero(livro.getGenero());
@@ -19,7 +25,7 @@ public class ManipularEbooks {
         ebookBusca.setTitulo(livro.getAno());
     }
 
-    public void listarEbooks(AcervoDaBiblioteca biblioteca){
+    public void listarEbooks(){
         if(biblioteca.getListaEmprestimos().isEmpty()){
             System.out.println("Acervo de e-books vazio.");
         }{
@@ -27,7 +33,7 @@ public class ManipularEbooks {
         }
     }
 
-    public Livro buscaEbooks(AcervoDaBiblioteca biblioteca, int idLivro){
+    public Livro buscaEbooks(int idLivro){
         Livro livroBuscado = (Livro) biblioteca.getEbooks().stream().filter(livro -> livro.getIdLivro() == idLivro);
         return livroBuscado;
     }

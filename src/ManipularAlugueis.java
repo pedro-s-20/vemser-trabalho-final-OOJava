@@ -1,14 +1,20 @@
 public class ManipularAlugueis {
+    AcervoDaBiblioteca biblioteca;
 
-    public void adicionarAluguel(AcervoDaBiblioteca biblioteca, Aluguel emprestimo) {
+    public ManipularAlugueis(AcervoDaBiblioteca biblioteca){
+        this.biblioteca = biblioteca;
+    }
+
+
+    public void adicionarAluguel(Aluguel emprestimo) {
         biblioteca.getListaEmprestimos().add(emprestimo);
     }
 
-    public void removerAluguel(AcervoDaBiblioteca biblioteca, int idEmprestimo){
+    public void removerAluguel(int idEmprestimo){
         biblioteca.getListaEmprestimos().remove(idEmprestimo);
     }
 
-    public void editarEmprestimo(AcervoDaBiblioteca biblioteca, int indice, Aluguel emprestimo){
+    public void editarEmprestimo(int indice, Aluguel emprestimo){
         Aluguel emprestimoBusca = biblioteca.getListaEmprestimos().get(indice);
         emprestimoBusca.setValorMulta(emprestimo.getValorMulta());
         emprestimoBusca.setLivroEmprestimo(emprestimo.getLivroEmprestimo());
@@ -16,7 +22,7 @@ public class ManipularAlugueis {
         emprestimoBusca.setQuantidadeDeDias(emprestimo.getQuantidadeDeDias());
     }
 
-    public void listarEmprestimos(AcervoDaBiblioteca biblioteca){
+    public void listarEmprestimos(){
         if(biblioteca.getListaEmprestimos().isEmpty()){
             System.out.println("Sem aluguéis cadastrados.");
         }{
