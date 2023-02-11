@@ -1,4 +1,4 @@
-public class ManipularLivrosFisicos {
+public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
 
     AcervoDaBiblioteca biblioteca;
 
@@ -35,6 +35,14 @@ public class ManipularLivrosFisicos {
     public Livro buscaLivrosFisicos(int idLivro){
         Livro livroBuscado = (Livro) biblioteca.getLivrosFisicos().stream().filter(livro -> livro.getIdLivro() == idLivro);
         return livroBuscado;
+    }
+
+    public void emprestarLivro(Usuario usuario, int id){
+
+    }
+
+    public void devolverLivro(Usuario usuario, int id){
+
     }
 
 }

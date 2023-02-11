@@ -1,6 +1,4 @@
-import java.util.stream.Stream;
-
-public class ManipularEbooks {
+public class ManipularEbooks implements EmprestimoEDevolucaoDeLivro {
 
     AcervoDaBiblioteca biblioteca;
 
@@ -39,7 +37,13 @@ public class ManipularEbooks {
         return livroBuscado;
     }
 
+    public void emprestarLivro(Usuario usuario, int id){
 
+    }
+
+    public void devolverLivro(Usuario usuario, int id){
+
+    }
 
 
 }
