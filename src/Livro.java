@@ -8,15 +8,6 @@ public class Livro {
     private String tipo;
     private boolean disponivel = true;
 
-    public Livro(String titulo, String genero, String autor, String editora, String ano, String tipo) {
-        this.titulo = titulo;
-        this.genero = genero;
-        this.autor = autor;
-        this.editora = editora;
-        this.ano = ano;
-        this.tipo = tipo;
-    }
-
     public int getIdLivro() {
         return idLivro;
     }

@@ -6,15 +6,6 @@ public abstract class Usuarios implements Impressao {
     private int numero;
     private String cep;
 
-    public Usuarios(String nome, String cpf, String telefone, String logradouro, int numero, String cep) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.cep = cep;
-    }
-
     public String getNome() {return nome;}
     public void setNome(String nome) {this.nome = nome;}
 
