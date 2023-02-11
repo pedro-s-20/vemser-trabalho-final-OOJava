@@ -60,5 +60,14 @@ public class ManipulacaoDeObjetos {
         ebookBusca.setEditora(livro.getEditora());
         ebookBusca.setTitulo(livro.getAno());
     }
+    public void editarUsuarios(int indice, Usuarios usuario){
+        Usuarios usuarioBusca = listaDeUsuarios.get(indice);
+        usuarioBusca.setNome(usuario.getNome());
+        usuarioBusca.setCpf(usuario.getCpf());
+        usuarioBusca.setCep(usuario.getCep());
+        usuarioBusca.setLogradouro(usuario.getLogradouro());
+        usuarioBusca.setNumero(usuario.getNumero());
+        usuarioBusca.setTelefone(usuario.getTelefone());
+    }
 }
 
