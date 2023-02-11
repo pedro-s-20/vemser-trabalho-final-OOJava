@@ -8,6 +8,7 @@ public class ManipularUsuarios {
 
     public void adicionarUsuario(Usuario usuario) {
         biblioteca.getListaDeUsuarios().add(usuario);
+        biblioteca.setContadorDeUsuarios();
     }
 
     public void removerUsuarioPorIndice(int indice){
@@ -28,14 +29,14 @@ public class ManipularUsuarios {
         if(biblioteca.getListaEmprestimos().isEmpty()){
             System.out.println("Sem usuários cadastrados.");
         }{
-            biblioteca.getListaDeUsuarios().stream().forEach(usuario -> usuario.imprimirInformacoes());
+            biblioteca.getListaDeUsuarios().stream().forEach(usuario -> usuario.imprimir());
         }
     }
 
-    public Usuario buscaAluguel(String cpfUsuario){
+    public Usuario buscaUsuario(String cpfUsuario){
         String cpfUsuarioFormatado = cpfUsuario.replaceAll("[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]", "");
-        Usuario usuariolUsuario = (Usuario) biblioteca.getListaDeUsuarios().stream().filter(Usuario -> Usuario.getCpf().equals(cpfUsuarioFormatado));
-        return usuariolUsuario;
+        Usuario usuarioBuscado = (Usuario) biblioteca.getListaDeUsuarios().stream().filter(Usuario -> Usuario.getCpf().equals(cpfUsuarioFormatado));
+        return usuarioBuscado;
     }
 
 

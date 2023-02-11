@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Ajuste em stream de visualizar dados das listas e funções adicionadas. Adicionado contadores de Usuários, Livros e Empréstimos.">
+    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Implementação das classes de manipulação no acervo.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ManipularAlugueis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularAlugueis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ManipularEbooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularEbooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ManipularUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Professores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Professores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +32,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2LZG27zGjQ2OUzVjNeWYCImMnv5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -88,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676146747805</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implementação das classes de manipulação no acervo.">
+      <created>1676147949103</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676147949103</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -97,6 +110,7 @@
     <MESSAGE value="Streams aplicados, para busca nos arrays." />
     <MESSAGE value="Aplicado função para remover pontuações no cpf." />
     <MESSAGE value="Ajuste em stream de visualizar dados das listas e funções adicionadas. Adicionado contadores de Usuários, Livros e Empréstimos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajuste em stream de visualizar dados das listas e funções adicionadas. Adicionado contadores de Usuários, Livros e Empréstimos." />
+    <MESSAGE value="Implementação das classes de manipulação no acervo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementação das classes de manipulação no acervo." />
   </component>
 </project>

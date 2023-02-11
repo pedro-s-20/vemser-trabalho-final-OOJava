@@ -64,24 +64,24 @@ public class AcervoDaBiblioteca {
         return contadorDeAlgueis;
     }
 
-    public void setContadorDeAlgueis(int contadorDeAlgueis) {
-        this.contadorDeAlgueis = contadorDeAlgueis;
+    public void setContadorDeAlgueis() {
+        this.contadorDeAlgueis++;
     }
 
     public int getContadorDeLivros() {
         return contadorDeLivros;
     }
 
-    public void setContadorDeLivros(int contadorDeLivros) {
-        this.contadorDeLivros = contadorDeLivros;
+    public void setContadorDeLivros() {
+        this.contadorDeLivros++;
     }
 
     public int getContadorDeUsuarios() {
         return contadorDeUsuarios;
     }
 
-    public void setContadorDeUsuarios(int contadorDeUsuarios) {
-        this.contadorDeUsuarios = contadorDeUsuarios;
+    public void setContadorDeUsuarios() {
+        this.contadorDeUsuarios++;
     }
 
 }

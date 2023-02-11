@@ -8,6 +8,7 @@ public class ManipularAlugueis {
 
     public void adicionarAluguel(Aluguel emprestimo) {
         biblioteca.getListaEmprestimos().add(emprestimo);
+        biblioteca.setContadorDeAlgueis();
     }
 
     public void removerAluguel(int idEmprestimo){

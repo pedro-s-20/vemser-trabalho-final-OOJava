@@ -10,6 +10,7 @@ public class ManipularEbooks {
 
     public void adicionarEbook(Livro ebook) {
         biblioteca.getEbooks().add(ebook);
+        biblioteca.setContadorDeLivros();
     }
 
     public void removerEbook(String ebook){

@@ -8,6 +8,7 @@ public class ManipularLivrosFisicos {
 
     public void adicionarLivroFisico(Livro livroFisico) {
         biblioteca.getLivrosFisicos().add(livroFisico);
+        biblioteca.setContadorDeLivros();
     }
 
     public void removerLivroFisicoPorId(String idLivro){
