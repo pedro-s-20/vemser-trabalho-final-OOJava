@@ -25,7 +25,8 @@ public class ManipularUsuarios {
     }
 
     public Usuario buscaAluguel(AcervoDaBiblioteca biblioteca, String cpfUsuario){
-        Usuario usuariolUsuario = (Usuario) biblioteca.getListaDeUsuarios().stream().filter(Usuario -> Usuario.getCpf().equals(cpfUsuario));
+        String cpfUsuarioFormatado = cpfUsuario.replaceAll("[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]", "");
+        Usuario usuariolUsuario = (Usuario) biblioteca.getListaDeUsuarios().stream().filter(Usuario -> Usuario.getCpf().equals(cpfUsuarioFormatado));
         return usuariolUsuario;
     }
 

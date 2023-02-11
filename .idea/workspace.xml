@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Criados os getters e setters das listas do acervo.">
+    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Streams aplicados, para busca nos arrays.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrativos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrativos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Estudantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estudantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gestores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gestores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManipularAlugueis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularAlugueis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManipularEbooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularEbooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ManipularUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularUsuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Professores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Professores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Usuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +64,20 @@
       <option name="project" value="LOCAL" />
       <updated>1676139883503</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Streams aplicados, para busca nos arrays.">
+      <created>1676143270328</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676143270328</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classes de manipulação criadas, com métodos." />
     <MESSAGE value="Criados os getters e setters das listas do acervo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criados os getters e setters das listas do acervo." />
+    <MESSAGE value="Streams aplicados, para busca nos arrays." />
+    <option name="LAST_COMMIT_MESSAGE" value="Streams aplicados, para busca nos arrays." />
   </component>
 </project>
