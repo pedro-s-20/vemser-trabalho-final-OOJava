@@ -1,13 +1,17 @@
-import java.util.List;
-
 public class Aluguel{
 
     private static final double MULTA_POR_ATRASO = 2;
 
-    private String idLivro;
+    private String idAluguel;
     private int quantidadeDeDias;
     private double valorMulta;
     private Livro livroEmprestimo;
+
+    public void imprimeAluguel(){
+        System.out.println("Aluguel de ID: " + getIdAluguel());
+        System.out.println("----------------------------------");
+        livroEmprestimo.imprimirDadosLivro();
+    }
 
     public int getQuantidadeDeDias() {
         return quantidadeDeDias;
@@ -25,12 +29,12 @@ public class Aluguel{
         this.livroEmprestimo = livroEmprestimo;
     }
 
-    public String getIdLivro() {
-        return idLivro;
+    public String getIdAluguel() {
+        return idAluguel;
     }
 
-    public void setIdLivro(String idLivro) {
-        this.idLivro = idLivro;
+    public void setIdAluguel(String idLivro) {
+        this.idAluguel = idAluguel;
     }
 
 

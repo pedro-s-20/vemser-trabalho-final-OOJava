@@ -18,8 +18,10 @@ public class ManipularLivrosFisicos {
     }
 
     public void listarLivrosFisicos(AcervoDaBiblioteca biblioteca){
-        for(int i = 0; i < biblioteca.getLivrosFisicos().size(); i++){
-            System.out.println("id " + i + " - " + biblioteca.getLivrosFisicos().get(i));
+        if(biblioteca.getListaEmprestimos().isEmpty()){
+            System.out.println("Acervo de livros físicos vazio.");
+        }{
+            biblioteca.getLivrosFisicos().stream().forEach(livroFisico -> livroFisico.imprimirDadosLivro());
         }
     }
 

@@ -5,6 +5,11 @@ public class AcervoDaBiblioteca {
     private List<Livro> ebooks;
     private List<Usuario> listaDeUsuarios;
     private List<Aluguel> listaEmprestimos;
+
+    private int contadorDeAlgueis;
+    private int contadorDeLivros;
+    private int contadorDeUsuarios;
+
     public AcervoDaBiblioteca(){
         this.livrosFisicos = new ArrayList<>();
         this.ebooks = new ArrayList<>();
@@ -44,4 +49,27 @@ public class AcervoDaBiblioteca {
         this.listaEmprestimos = listaEmprestimos;
     }
 
+    public int getContadorDeAlgueis() {
+        return contadorDeAlgueis;
+    }
+
+    public void setContadorDeAlgueis(int contadorDeAlgueis) {
+        this.contadorDeAlgueis = contadorDeAlgueis;
+    }
+
+    public int getContadorDeLivros() {
+        return contadorDeLivros;
+    }
+
+    public void setContadorDeLivros(int contadorDeLivros) {
+        this.contadorDeLivros = contadorDeLivros;
+    }
+
+    public int getContadorDeUsuarios() {
+        return contadorDeUsuarios;
+    }
+
+    public void setContadorDeUsuarios(int contadorDeUsuarios) {
+        this.contadorDeUsuarios = contadorDeUsuarios;
+    }
 }

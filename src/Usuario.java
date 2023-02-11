@@ -3,6 +3,7 @@ public abstract class Usuario implements Impressao {
     private String cpf;
     private String telefone;
     private String logradouro;
+    private String bairro;
     private int numero;
     private String cep;
 
@@ -23,7 +24,30 @@ public abstract class Usuario implements Impressao {
     public int getNumero() {return numero;}
     public void setNumero(int numero) {this.numero = numero;}
 
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
     public String getCep() {return cep;}
 
     public void setCep(String cep) {this.cep = cep;}
+
+    public void imprimirInformacoes(){
+
+        System.out.println("------------------------");
+        System.out.println("Nome: " + getNome());
+        System.out.println("CPF: " + getCpf());
+        System.out.println("Endereço: " + getLogradouro() + ", " + getNumero() + ", bairro: " + getBairro());
+        System.out.println("CEP: " + getCep());
+        System.out.println("Telefone: " + getTelefone());
+        System.out.println("------------------------");
+
+    }
+
+
+
 }

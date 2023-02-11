@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Streams aplicados, para busca nos arrays.">
+    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Aplicado função para remover pontuações no cpf.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aluguel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularAlugueis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularAlugueis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularEbooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularEbooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ManipularUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularUsuarios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
     </list>
@@ -71,13 +77,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676143270328</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Aplicado função para remover pontuações no cpf.">
+      <created>1676143757392</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676143757392</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classes de manipulação criadas, com métodos." />
     <MESSAGE value="Criados os getters e setters das listas do acervo." />
     <MESSAGE value="Streams aplicados, para busca nos arrays." />
-    <option name="LAST_COMMIT_MESSAGE" value="Streams aplicados, para busca nos arrays." />
+    <MESSAGE value="Aplicado função para remover pontuações no cpf." />
+    <option name="LAST_COMMIT_MESSAGE" value="Aplicado função para remover pontuações no cpf." />
   </component>
 </project>

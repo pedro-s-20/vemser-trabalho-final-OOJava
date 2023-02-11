@@ -83,6 +83,7 @@ public class Livro {
         } else {
             System.out.println("Tipo: Ebook");
         }
+        System.out.println("--------------------------------------------------------------");
 
     }
 }

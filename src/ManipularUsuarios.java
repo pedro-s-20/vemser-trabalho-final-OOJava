@@ -19,8 +19,10 @@ public class ManipularUsuarios {
     }
 
     public void listarUsuarios(AcervoDaBiblioteca biblioteca){
-        for(int i = 0; i < biblioteca.getListaDeUsuarios().size(); i++){
-            System.out.println("id " + i + " - " + biblioteca.getListaDeUsuarios().get(i));
+        if(biblioteca.getListaEmprestimos().isEmpty()){
+            System.out.println("Sem usuários cadastrados.");
+        }{
+            biblioteca.getListaDeUsuarios().stream().forEach(usuario -> usuario.imprimirInformacoes());
         }
     }
 

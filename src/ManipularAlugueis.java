@@ -12,18 +12,20 @@ public class ManipularAlugueis {
         Aluguel emprestimoBusca = biblioteca.getListaEmprestimos().get(indice);
         emprestimoBusca.setValorMulta(emprestimo.getValorMulta());
         emprestimoBusca.setLivroEmprestimo(emprestimo.getLivroEmprestimo());
-        emprestimoBusca.setIdLivro(emprestimo.getIdLivro());
+        emprestimoBusca.setIdAluguel(emprestimo.getIdAluguel());
         emprestimoBusca.setQuantidadeDeDias(emprestimo.getQuantidadeDeDias());
     }
 
     public void listarEmprestimos(AcervoDaBiblioteca biblioteca){
-        for(int i = 0; i < biblioteca.getListaEmprestimos().size(); i++){
-            System.out.println("id " + i + " - " + biblioteca.getListaEmprestimos().get(i));
+        if(biblioteca.getListaEmprestimos().isEmpty()){
+            System.out.println("Sem aluguéis cadastrados.");
+        }{
+            biblioteca.getListaEmprestimos().stream().forEach(aluguel -> aluguel.imprimeAluguel());
         }
     }
 
     public Aluguel buscaAluguel(AcervoDaBiblioteca biblioteca, String idLivro){
-        Aluguel aluguelBuscado = (Aluguel) biblioteca.getListaEmprestimos().stream().filter(aluguel -> aluguel.getIdLivro().equals(idLivro));
+        Aluguel aluguelBuscado = (Aluguel) biblioteca.getListaEmprestimos().stream().filter(aluguel -> aluguel.getIdAluguel().equals(idLivro));
         return aluguelBuscado;
     }
 

@@ -20,8 +20,10 @@ public class ManipularEbooks {
     }
 
     public void listarEbooks(AcervoDaBiblioteca biblioteca){
-        for(int i = 0; i < biblioteca.getEbooks().size(); i++){
-            System.out.println("id " + i + " - " + biblioteca.getEbooks().get(i));
+        if(biblioteca.getListaEmprestimos().isEmpty()){
+            System.out.println("Acervo de e-books vazio.");
+        }{
+            biblioteca.getEbooks().stream().forEach(ebook -> ebook.imprimirDadosLivro());
         }
     }
 
