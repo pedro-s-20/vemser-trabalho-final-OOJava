@@ -1,6 +1,6 @@
 public class ManipularUsuarios {
 
-    public void adicionarUsuario(AcervoDaBiblioteca biblioteca, Usuarios usuario) {
+    public void adicionarUsuario(AcervoDaBiblioteca biblioteca, Usuario usuario) {
         biblioteca.getListaDeUsuarios().add(usuario);
     }
 
@@ -8,8 +8,8 @@ public class ManipularUsuarios {
         biblioteca.getListaDeUsuarios().remove(indice);
     }
 
-    public void editarUsuarios(AcervoDaBiblioteca biblioteca, int indice, Usuarios usuario){
-        Usuarios usuarioBusca = biblioteca.getListaDeUsuarios().get(indice);
+    public void editarUsuarios(AcervoDaBiblioteca biblioteca, int indice, Usuario usuario){
+        Usuario usuarioBusca = biblioteca.getListaDeUsuarios().get(indice);
         usuarioBusca.setNome(usuario.getNome());
         usuarioBusca.setCpf(usuario.getCpf());
         usuarioBusca.setCep(usuario.getCep());
@@ -22,6 +22,11 @@ public class ManipularUsuarios {
         for(int i = 0; i < biblioteca.getListaDeUsuarios().size(); i++){
             System.out.println("id " + i + " - " + biblioteca.getListaDeUsuarios().get(i));
         }
+    }
+
+    public Usuario buscaAluguel(AcervoDaBiblioteca biblioteca, String cpfUsuario){
+        Usuario usuariolUsuario = (Usuario) biblioteca.getListaDeUsuarios().stream().filter(Usuario -> Usuario.getCpf().equals(cpfUsuario));
+        return usuariolUsuario;
     }
 
 

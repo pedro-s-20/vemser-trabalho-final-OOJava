@@ -3,7 +3,7 @@ import java.util.List;
 public class AcervoDaBiblioteca {
     private List<Livro> livrosFisicos;
     private List<Livro> ebooks;
-    private List<Usuarios> listaDeUsuarios;
+    private List<Usuario> listaDeUsuarios;
     private List<Aluguel> listaEmprestimos;
     public AcervoDaBiblioteca(){
         this.livrosFisicos = new ArrayList<>();
@@ -28,11 +28,11 @@ public class AcervoDaBiblioteca {
         this.ebooks = ebooks;
     }
 
-    public List<Usuarios> getListaDeUsuarios() {
+    public List<Usuario> getListaDeUsuarios() {
         return listaDeUsuarios;
     }
 
-    public void setListaDeUsuarios(List<Usuarios> listaDeUsuarios) {
+    public void setListaDeUsuarios(List<Usuario> listaDeUsuarios) {
         this.listaDeUsuarios = listaDeUsuarios;
     }
 

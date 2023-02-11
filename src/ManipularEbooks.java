@@ -1,3 +1,5 @@
+import java.util.stream.Stream;
+
 public class ManipularEbooks {
 
     public void adicionarEbook(AcervoDaBiblioteca biblioteca, Livro ebook) {
@@ -22,6 +24,13 @@ public class ManipularEbooks {
             System.out.println("id " + i + " - " + biblioteca.getEbooks().get(i));
         }
     }
+
+    public Livro buscaEbooks(AcervoDaBiblioteca biblioteca, int idLivro){
+        Livro livroBuscado = (Livro) biblioteca.getEbooks().stream().filter(livro -> livro.getIdLivro() == idLivro);
+        return livroBuscado;
+    }
+
+
 
 
 }

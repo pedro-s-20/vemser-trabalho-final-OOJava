@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ManipularEbooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Criados os getters e setters das listas do acervo.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aluguel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Administrativos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrativos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Estudantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estudantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gestores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gestores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularAlugueis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularAlugueis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularEbooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularEbooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Professores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Professores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Usuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +45,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Cliente/Desktop/VEMSER-MOD1-FINAL/vemser-trabalho-final",
+    "last_opened_file_path": "C:/backend-11-edicao/1 - java oo/projetos/aula",
     "settings.editor.selected.configurable": "proofread"
   }
 }]]></component>
@@ -52,6 +58,26 @@
       <option name="presentableId" value="Default" />
       <updated>1676070982751</updated>
     </task>
+    <task id="LOCAL-00001" summary="Classes de manipulação criadas, com métodos.">
+      <created>1676139628288</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676139628288</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Criados os getters e setters das listas do acervo.">
+      <created>1676139883503</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676139883503</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Classes de manipulação criadas, com métodos." />
+    <MESSAGE value="Criados os getters e setters das listas do acervo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Criados os getters e setters das listas do acervo." />
   </component>
 </project>

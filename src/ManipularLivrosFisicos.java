@@ -23,4 +23,9 @@ public class ManipularLivrosFisicos {
         }
     }
 
+    public Livro buscaLivrosFisicos(AcervoDaBiblioteca biblioteca, int idLivro){
+        Livro livroBuscado = (Livro) biblioteca.getLivrosFisicos().stream().filter(livro -> livro.getIdLivro() == idLivro);
+        return livroBuscado;
+    }
+
 }

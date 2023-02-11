@@ -1,4 +1,4 @@
-public class Professores extends Usuarios implements Impressao {
+public class Professores extends Usuario implements Impressao {
     private String matricula;
 
     public String getMatricula() {return matricula;}

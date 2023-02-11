@@ -1,4 +1,4 @@
-public class Estudantes extends Usuarios implements Impressao {
+public class Estudantes extends Usuario implements Impressao {
     private String id;
 
     public String getId() {return id;}

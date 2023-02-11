@@ -22,7 +22,10 @@ public class ManipularAlugueis {
         }
     }
 
-
+    public Aluguel buscaAluguel(AcervoDaBiblioteca biblioteca, String idLivro){
+        Aluguel aluguelBuscado = (Aluguel) biblioteca.getListaEmprestimos().stream().filter(aluguel -> aluguel.getIdLivro().equals(idLivro));
+        return aluguelBuscado;
+    }
 
 
 }

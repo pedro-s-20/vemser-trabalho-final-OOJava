@@ -1,4 +1,4 @@
-public abstract class Usuarios implements Impressao {
+public abstract class Usuario implements Impressao {
     private String nome;
     private String cpf;
     private String telefone;
