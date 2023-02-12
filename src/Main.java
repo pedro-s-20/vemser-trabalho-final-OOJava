@@ -358,7 +358,7 @@ public class Main {
     //                                    Livro livroArray = retorno da pesquisa;
                                         switch (tipoDeLivro){
                                             case 1->{
-                                                
+
                                                 biblioteca.manipularLivrosFisicos.removerLivroFisicoPorId(editar, livroArray);
                                             }
                                             case 2 ->{
