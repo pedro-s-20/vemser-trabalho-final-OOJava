@@ -33,7 +33,15 @@ public class ManipularAlugueis {
     }
 
     public Aluguel buscaAluguel(int idAluguel){
-        Aluguel aluguelBuscado = (Aluguel) biblioteca.getListaEmprestimos().stream().filter(aluguel -> aluguel.getIdAluguel() == idAluguel);
+
+        Aluguel aluguelBuscado = null;
+
+        for (Aluguel aluguel:biblioteca.getListaEmprestimos()) {
+            if(aluguel.getIdAluguel() == idAluguel){
+                aluguelBuscado = aluguel;
+            }
+        }
+
         return aluguelBuscado;
     }
 

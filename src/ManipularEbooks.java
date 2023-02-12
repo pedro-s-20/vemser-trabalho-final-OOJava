@@ -33,7 +33,14 @@ public class ManipularEbooks implements EmprestimoEDevolucaoDeLivro {
     }
 
     public Livro buscaEbooks(int idLivro){
-        Livro livroBuscado = (Livro) biblioteca.getEbooks().stream().filter(livro -> livro.getIdLivro() == idLivro);
+        Livro livroBuscado = null;
+
+        for (Livro livro:biblioteca.getEbooks()) {
+            if(livro.getIdLivro() == idLivro){
+                livroBuscado = livro;
+            }
+        }
+
         return livroBuscado;
     }
     @Override

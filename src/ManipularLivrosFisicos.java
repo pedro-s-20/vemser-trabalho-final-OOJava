@@ -33,7 +33,15 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
     }
 
     public Livro buscaLivrosFisicos(int idLivro){
-        Livro livroBuscado = (Livro) biblioteca.getLivrosFisicos().stream().filter(livro -> livro.getIdLivro() == idLivro);
+
+        Livro livroBuscado = null;
+
+        for (Livro livro:biblioteca.getLivrosFisicos()) {
+            if(livro.getIdLivro() == idLivro){
+                livroBuscado = livro;
+            }
+        }
+
         return livroBuscado;
     }
     @Override

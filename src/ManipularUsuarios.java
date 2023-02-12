@@ -35,7 +35,15 @@ public class ManipularUsuarios {
 
     public Usuario buscaUsuario(String cpfUsuario){
         String cpfUsuarioFormatado = cpfUsuario.replaceAll("[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]", "");
-        Usuario usuarioBuscado = (Usuario) biblioteca.getListaDeUsuarios().stream().filter(Usuario -> Usuario.getCpf().equals(cpfUsuarioFormatado));
+
+        Usuario usuarioBuscado = null;
+
+        for (Usuario usuario:biblioteca.getListaDeUsuarios()) {
+            if(usuario.getCpf().equals(cpfUsuarioFormatado)){
+                usuarioBuscado = usuario;
+            }
+        }
+
         return usuarioBuscado;
     }
 

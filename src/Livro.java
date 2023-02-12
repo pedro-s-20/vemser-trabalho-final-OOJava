@@ -5,7 +5,8 @@ public class Livro {
     private String autor;
     private String editora;
     private String ano;
-    private String tipo;
+    // 1 - Livro físico | 2 - e-book
+    private int tipo;
     private boolean disponivel = true;
 
     public int getIdLivro() {
@@ -56,11 +57,11 @@ public class Livro {
         this.ano = ano;
     }
 
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 
@@ -78,7 +79,7 @@ public class Livro {
         System.out.println("Autor: " + autor);
         System.out.println("Editora: " + editora);
         System.out.println("Ano: " + ano);
-        if(tipo.equals("1")){
+        if(tipo == 1){
             System.out.println("Tipo: Fisico");
         } else {
             System.out.println("Tipo: Ebook");
