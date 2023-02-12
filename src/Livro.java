@@ -1,5 +1,5 @@
 public class Livro {
-    private int idLivro = 0;
+    private int idLivro;
     private String titulo;
     private String genero;
     private String autor;

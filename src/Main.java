@@ -231,7 +231,7 @@ public class Main {
             Scanner ler = new Scanner(System.in);
             boolean livroLiberado = false, continua = true;
             int opcao = 0;
-            int idLivro;
+            int idLivro,tipoDeLivro;
 
             do {
                 System.out.println("Digite a opção desejada:");
@@ -245,7 +245,7 @@ public class Main {
                 switch (opcao){
                     case 1->{
                         do {
-                            System.out.println("-----BEM-VINDO A BIBLIOTECA DBC!-----");
+
                             System.out.println("Escolha uma opção: ");
                             System.out.println("[1] - Pesquisar Livro.");
                             System.out.println("[2] - Cadastrar Livro.");
@@ -257,73 +257,96 @@ public class Main {
 
                             switch (opcao) {
                                 case 1:
+//                                    menu de escolha do tipo de pesquisa.
                                     System.out.println("Digite o ID do livro ");
                                     idLivro = ler.nextInt();
-                                    if (biblioteca.manipularLivrosFisicos.buscaLivrosFisicos(idLivro) != null) {
-                                        livroLiberado = true;
-                                    } else {
-                                        System.out.println("Livro não encontrado.");
-                                    }
                                     break;
 
                                 case 2:
-                                    opcao = 0;
+                                    Livro livro = new Livro();
 
+                                    livro.setIdLivro(biblioteca.getContadorDeLivros());
+                                    System.out.println("Digite o titulo do livro: ");
+                                    livro.setTitulo(ler.nextLine());
+                                    System.out.println("Digite o genero do livro: ");
+                                    livro.setGenero(ler.nextLine());
+                                    System.out.println("Digite o Autor: ");
+                                    livro.setAutor(ler.nextLine());
+                                    System.out.println("Digite a Editora: ");
+                                    livro.setEditora(ler.nextLine());
+                                    System.out.println("Digite o  Ano: ");
+                                    livro.setAno(ler.nextLine());
                                     do {
-                                        System.out.println("Digite os dados do livro. ");
 
-                                        opcao = ler.nextInt();
+                                        System.out.println("Digite o Tipo (1- Físico / 2- Ebook) ");
+                                        tipoDeLivro = ler.nextInt();
                                         ler.nextLine();
-
-                                        if (opcao < 1 || opcao > 7) {
-                                            System.out.println("Opção inválida. Tente novamente.");
+                                        switch (tipoDeLivro){
+                                            case 1->{
+                                                livro.setTipo(1);
+                                                biblioteca.manipularLivrosFisicos.adicionarLivroFisico(livro);
+                                            }
+                                            case 2 ->{
+                                                livro.setTipo(2);
+                                                biblioteca.manipularEbooks.adicionarEbook(livro);
+                                            }
+                                            default -> {
+                                                System.err.println("Valor invalido!");
+                                            }
                                         }
-                                    } while (opcao < 1 || opcao > 6);
+                                    }while (tipoDeLivro < 1 || tipoDeLivro > 2);
+                                    System.out.println("Livro cadastrado com sucesso!");
+                                    break;
 
-                                    switch (opcao) {
-                                        case 1:
-                                            Livro livro = new Livro();
-
-                                            livro.setIdLivro(0);
-                                            System.out.println("Digite o ID do livro: ");
-                                            livro.setIdLivro(ler.nextInt());
-                                            System.out.println("Digite o titulo do livro: ");
-                                            livro.setTitulo(ler.nextLine());
-                                            System.out.println("Digite o genero do livro: ");
-                                            livro.setGenero(ler.nextLine());
-                                            System.out.println("Digite o Autor: ");
-                                            livro.setAutor(ler.nextLine());
-                                            System.out.println("Digite a Editora: ");
-                                            livro.setEditora(ler.nextLine());
-                                            System.out.println("Digite o  Ano: ");
-                                            livro.setAno(ler.nextLine());
-                                            System.out.println("Digite o Tipo(1- Físico / 2- Ebook) ");
-                                            livro.setTipo(ler.nextInt());
-
-                                            biblioteca.manipularLivrosFisicos.adicionarLivroFisico(livro);
-
-                                            System.out.println("Livro cadastrado com sucesso!");
-                                            livroLiberado = true;
-                                            continua = false;
-                                            break;
-
-                                    }
-                                    while (continua == true) {
-                                        return;
-
-                                    }
                                 case 3:
 //                      como deseja pesquisar o livro!!!!
-                                    System.out.println("Digite o ID do livro que quer editar:");
-                                    idLivro = ler.nextInt();
-                                    ler.nextLine();
-                                    Livro livro = biblioteca.manipularLivrosFisicos.buscaLivrosFisicos(idLivro);
-                                    if (livro != null) {
-                                        biblioteca.manipularLivrosFisicos.editarLivrofisico();
-                                        livroLiberado = true;
-                                    } else {
-                                        System.out.println("Livro não encontrado.");
-                                    }
+//                                    Livro livro = retorno da pesquisa;
+                                    do {
+                                        System.out.println("Digite o Tipo (1- Físico / 2- Ebook) ");
+                                        tipoDeLivro = ler.nextInt();
+                                        ler.nextLine();
+                                        switch (tipoDeLivro){
+                                            case 1->{
+                                                Livro editar = new Livro();
+
+                                                editar.setIdLivro(biblioteca.getContadorDeLivros());
+                                                System.out.println("Digite o titulo do livro: ");
+                                                editar.setTitulo(ler.nextLine());
+                                                System.out.println("Digite o genero do livro: ");
+                                                editar.setGenero(ler.nextLine());
+                                                System.out.println("Digite o Autor: ");
+                                                editar.setAutor(ler.nextLine());
+                                                System.out.println("Digite a Editora: ");
+                                                editar.setEditora(ler.nextLine());
+                                                System.out.println("Digite o  Ano: ");
+                                                editar.setAno(ler.nextLine());
+                                                editar.setTipo(1);
+                                                biblioteca.manipularLivrosFisicos.editarLivrofisico(editar);
+                                            }
+                                            case 2 ->{
+                                                Livro editar = new Livro();
+                                                livro.setIdLivro(biblioteca.getContadorDeLivros());
+                                                System.out.println("Digite o titulo do livro: ");
+                                                livro.setTitulo(ler.nextLine());
+                                                System.out.println("Digite o genero do livro: ");
+                                                livro.setGenero(ler.nextLine());
+                                                System.out.println("Digite o Autor: ");
+                                                livro.setAutor(ler.nextLine());
+                                                System.out.println("Digite a Editora: ");
+                                                livro.setEditora(ler.nextLine());
+                                                System.out.println("Digite o  Ano: ");
+                                                livro.setAno(ler.nextLine());
+                                                livro.setTipo(2);
+                                                biblioteca.manipularEbooks.editarEbook(livro.getIdLivro(), editar);
+                                            }
+                                            default -> {
+                                                System.err.println("Valor invalido!");
+                                            }
+                                        }
+                                    }while (tipoDeLivro < 1 || tipoDeLivro > 2);
+                                    System.out.println("Livro cadastrado com sucesso!");
+                                    break;
+
                                 case 4:
 //                      como deseja remover o livro!!!!
                                     System.out.println("Digite o ID do livro que deseja remover:");

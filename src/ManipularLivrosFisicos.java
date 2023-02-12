@@ -15,13 +15,12 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
         biblioteca.getLivrosFisicos().remove(idLivro);
     }
 
-    public void editarLivrofisico(int indice, Livro livro){
-        Livro livroBusca = biblioteca.getLivrosFisicos().get(indice);
-        livroBusca.setTitulo(livro.getTitulo());
-        livroBusca.setGenero(livro.getGenero());
-        livroBusca.setAutor(livro.getAutor());
-        livroBusca.setEditora(livro.getEditora());
-        livroBusca.setTitulo(livro.getAno());
+    public void editarLivrofisico(Livro livroAtualizado, Livro livroArray){
+        livroArray.setTitulo(livroAtualizado.getTitulo());
+        livroArray.setGenero(livroAtualizado.getGenero());
+        livroArray.setAutor(livroAtualizado.getAutor());
+        livroArray.setEditora(livroAtualizado.getEditora());
+        livroArray.setTitulo(livroAtualizado.getAno());
     }
 
     public void listarLivrosFisicos(){
