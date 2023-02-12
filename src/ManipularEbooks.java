@@ -36,13 +36,33 @@ public class ManipularEbooks implements EmprestimoEDevolucaoDeLivro {
         Livro livroBuscado = (Livro) biblioteca.getEbooks().stream().filter(livro -> livro.getIdLivro() == idLivro);
         return livroBuscado;
     }
-
-    public void emprestarLivro(Usuario usuario, int id){
-
+    @Override
+    public void emprestarLivro(Usuario usuario, Livro livro){
+        if(livro.isDisponivel()){
+            livro.setDisponivel(false);
+            biblioteca.setContadorDeAlugueis();
+            Aluguel aluguelLivro = new Aluguel();
+            aluguelLivro.setIdAluguel(biblioteca.getContadorDeAlgueis());
+            if(usuario.getTipoUsuario() == 1){
+                aluguelLivro.setQuantidadeDeDias(7);
+            } else {
+                aluguelLivro.setQuantidadeDeDias(14);
+            }
+            aluguelLivro.setPessoa(usuario);
+            biblioteca.manipularAlugueis.adicionarAluguel(aluguelLivro);
+            System.out.println("O número do seu protocolo é: " + biblioteca.getContadorDeAlgueis());
+        } else {
+            System.out.println("O livro escolhido não está disponível!");
+        }
     }
-
-    public void devolverLivro(Usuario usuario, int id){
-
+    @Override
+    public void devolverLivro(Usuario usuario, int idEmprestimo){
+        if(idEmprestimo <= biblioteca.getListaEmprestimos().size()) {
+            biblioteca.getListaEmprestimos().get(idEmprestimo).getLivroEmprestimo().setDisponivel(true);
+            biblioteca.getListaEmprestimos().get(idEmprestimo).setFinalizado(true);
+        } else {
+            System.out.println("O número de protocolo não foi encontrado, tente novamente!");
+        }
     }
 
 

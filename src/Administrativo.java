@@ -1,14 +1,18 @@
-public class Estudantes extends Usuario implements Impressao {
+public class Administrativo extends Usuario implements Impressao{
     private String matricula;
 
-    public String getMatricula() {return matricula;}
-    public void setMatricula(String id) {this.matricula = id;}
+    public String getMatricula() {
+        return matricula;
+    }
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
 
     @Override
     public void imprimir(){
 
         System.out.println("------------------------");
-        System.out.println("--------ESTUDANTE-------");
+        System.out.println("------ADMINISTRADOR-----");
         System.out.println("Nome: " + getNome());
         System.out.println("CPF: " + getCpf());
         System.out.println("Endereço: " + getLogradouro() + ", " + getNumero() + ", bairro: " + getBairro());

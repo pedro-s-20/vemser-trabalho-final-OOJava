@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Pequenas alterações e correção de métodos dos contadores.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AcervoDaBiblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Administrativos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrativo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aluguel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmprestimoEDevolucaoDeLivro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmprestimoEDevolucaoDeLivro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManipularAlugueis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularAlugueis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Estudantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estudante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gestores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gestor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularEbooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularEbooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Professores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Professor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,14 +45,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Bruno/repositorios/backend-11-edicao/1 - java oo/projetos/aula/src/aula6",
-    "settings.editor.selected.configurable": "proofread"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bruno/repositorios/backend-11-edicao/1 - java oo/projetos/aula/src/aula6&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

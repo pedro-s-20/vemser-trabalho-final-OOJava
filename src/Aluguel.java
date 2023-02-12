@@ -8,6 +8,7 @@ public class Aluguel{
     private Livro livroEmprestimo;
     private Usuario pessoa;
     private boolean finalizado = false;
+    AcervoDaBiblioteca biblioteca;
 
     public boolean isFinalizado() {
         return finalizado;
@@ -19,7 +20,6 @@ public class Aluguel{
 
     public void imprimeAluguel(){
         System.out.println("Aluguel de ID: " + getIdAluguel());
-        System.out.println("Finalizado: ");
         System.out.println("----------------------------------");
         livroEmprestimo.imprimirDadosLivro();
     }
@@ -65,7 +65,7 @@ public class Aluguel{
     }
 
     public boolean calcularMulta(int dias) {
-        if (dias <= 3) {
+        if (dias <= 7) {
             return true;
         } else {
             setValorMulta(  MULTA_POR_ATRASO * (dias - 3));

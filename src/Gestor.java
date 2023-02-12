@@ -1,4 +1,4 @@
-public class Professores extends Usuario implements Impressao {
+public class Gestor extends Usuario implements Impressao{
     private String matricula;
 
     public String getMatricula() {return matricula;}
@@ -8,7 +8,7 @@ public class Professores extends Usuario implements Impressao {
     public void imprimir(){
 
         System.out.println("------------------------");
-        System.out.println("--------PROFESSOR-------");
+        System.out.println("---------GESTOR---------");
         System.out.println("Nome: " + getNome());
         System.out.println("CPF: " + getCpf());
         System.out.println("Endereço: " + getLogradouro() + ", " + getNumero() + ", bairro: " + getBairro());

@@ -4,7 +4,7 @@ public abstract class Usuario implements Impressao {
     private String telefone;
     private String logradouro;
     private String bairro;
-    private int numero;
+    private String numero;
     private String cep;
 
     //1- Estudante | 2 - Professor | 3 - Gestor | 4 - Administrador
@@ -31,8 +31,8 @@ public abstract class Usuario implements Impressao {
     public String getLogradouro() {return logradouro;}
     public void setLogradouro(String logradouro) {this.logradouro = logradouro;}
 
-    public int getNumero() {return numero;}
-    public void setNumero(int numero) {this.numero = numero;}
+    public String getNumero() {return numero;}
+    public void setNumero(String numero) {this.numero = numero;}
 
     public String getBairro() {
         return bairro;
