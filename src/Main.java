@@ -33,7 +33,9 @@ public class Main {
                 System.out.println("Escolha uma opção: ");
                 System.out.println("[1] - Já sou cadastrado.");
                 System.out.println("[2] - Quero me cadastrar.");
-                System.out.println("[3] - Sair.");
+                System.out.println("[3] - Editar cadastro.");
+                System.out.println("[4] - Excluir cadastro.");
+                System.out.println("[5] - Sair.");
                 opcao = entradaUsu.nextInt();
                 entradaUsu.nextLine();
 
@@ -210,20 +212,17 @@ public class Main {
                                 continuar = true;
                                 break;
                         }
-                        break;
 
-                    case 3:
+                        break;
+                        case 3:
                         acessoLiberado = true;
                         continuar = true;
                         break;
-
                     default:
                         System.err.println("Opção inválida!");
                         break;
                 }
-
-            } while (continuar == true);
-
+            }while (continuar == true) ;
             return usuarioAcessado;
 
         }
@@ -235,103 +234,149 @@ public class Main {
             int idLivro;
 
             do {
-                System.out.println("-----BEM-VINDO A BIBLIOTECA DBC!-----");
-                System.out.println("Escolha uma opção: ");
-                System.out.println("[1] - Pesquisar Livro.");
-                System.out.println("[2] - Cadastrar Livro.");
-                System.out.println("[3] - Editar Livro");
-                System.out.println("[4] - Remover Livro");
-                System.out.println("[5] - Sair.");
+                System.out.println("Digite a opção desejada:");
+                System.out.println("[1] - Livros ");
+                System.out.println("[2] - Alugueis");
+                System.out.println("[3] - Usuarios");
+                System.out.println("[4] - Voltar");
+
                 opcao = ler.nextInt();
                 ler.nextLine();
-
-                switch (opcao) {
-                    case 1:
-                        System.out.println("Digite o ID do livro ");
-                        idLivro = ler.nextInt();
-                        if (biblioteca.manipularLivrosFisicos.buscaLivrosFisicos(idLivro) != null) {
-                            livroLiberado = true;
-                        } else {
-                            System.out.println("Livro não encontrado.");
-                        }
-                        break;
-
-                    case 2:
-                        opcao = 0;
-
+                switch (opcao){
+                    case 1->{
                         do {
-                            System.out.println("Digite os dados do livro. ");
-
+                            System.out.println("-----BEM-VINDO A BIBLIOTECA DBC!-----");
+                            System.out.println("Escolha uma opção: ");
+                            System.out.println("[1] - Pesquisar Livro.");
+                            System.out.println("[2] - Cadastrar Livro.");
+                            System.out.println("[3] - Editar Livro");
+                            System.out.println("[4] - Remover Livro");
+                            System.out.println("[5] - Sair.");
                             opcao = ler.nextInt();
                             ler.nextLine();
 
-                            if (opcao < 1 || opcao > 7) {
-                                System.out.println("Opção inválida. Tente novamente.");
+                            switch (opcao) {
+                                case 1:
+                                    System.out.println("Digite o ID do livro ");
+                                    idLivro = ler.nextInt();
+                                    if (biblioteca.manipularLivrosFisicos.buscaLivrosFisicos(idLivro) != null) {
+                                        livroLiberado = true;
+                                    } else {
+                                        System.out.println("Livro não encontrado.");
+                                    }
+                                    break;
+
+                                case 2:
+                                    opcao = 0;
+
+                                    do {
+                                        System.out.println("Digite os dados do livro. ");
+
+                                        opcao = ler.nextInt();
+                                        ler.nextLine();
+
+                                        if (opcao < 1 || opcao > 7) {
+                                            System.out.println("Opção inválida. Tente novamente.");
+                                        }
+                                    } while (opcao < 1 || opcao > 6);
+
+                                    switch (opcao) {
+                                        case 1:
+                                            Livro livro = new Livro();
+
+                                            livro.setIdLivro(0);
+                                            System.out.println("Digite o ID do livro: ");
+                                            livro.setIdLivro(ler.nextInt());
+                                            System.out.println("Digite o titulo do livro: ");
+                                            livro.setTitulo(ler.nextLine());
+                                            System.out.println("Digite o genero do livro: ");
+                                            livro.setGenero(ler.nextLine());
+                                            System.out.println("Digite o Autor: ");
+                                            livro.setAutor(ler.nextLine());
+                                            System.out.println("Digite a Editora: ");
+                                            livro.setEditora(ler.nextLine());
+                                            System.out.println("Digite o  Ano: ");
+                                            livro.setAno(ler.nextLine());
+                                            System.out.println("Digite o Tipo(1- Físico / 2- Ebook) ");
+                                            livro.setTipo(ler.nextInt());
+
+                                            biblioteca.manipularLivrosFisicos.adicionarLivroFisico(livro);
+
+                                            System.out.println("Livro cadastrado com sucesso!");
+                                            livroLiberado = true;
+                                            continua = false;
+                                            break;
+
+                                    }
+                                    while (continua == true) {
+                                        return;
+
+                                    }
+                                case 3:
+//                      como deseja pesquisar o livro!!!!
+                                    System.out.println("Digite o ID do livro que quer editar:");
+                                    idLivro = ler.nextInt();
+                                    ler.nextLine();
+                                    Livro livro = biblioteca.manipularLivrosFisicos.buscaLivrosFisicos(idLivro);
+                                    if (livro != null) {
+                                        biblioteca.manipularLivrosFisicos.editarLivrofisico();
+                                        livroLiberado = true;
+                                    } else {
+                                        System.out.println("Livro não encontrado.");
+                                    }
+                                case 4:
+//                      como deseja remover o livro!!!!
+                                    System.out.println("Digite o ID do livro que deseja remover:");
+                                    idLivro = ler.nextInt();
+                                    ler.nextLine();
+                                    Livro ebook = biblioteca.manipularEbooks.buscaEbooks(idLivro);
+                                    if (ebook != null) {
+                                        biblioteca.manipularEbooks.removerEbook();
+                                        livroLiberado = true;
+                                    } else {
+                                        System.out.println("Livro não encontrado.");
+                                    }
+                                    break;
+
                             }
-                        } while (opcao < 1 || opcao > 6);
 
-                        switch (opcao) {
-                            case 1:
-                                Livro livro = new Livro();
 
-                                livro.setIdLivro(0);
-                                System.out.println("Digite o ID do livro: ");
-                                livro.setIdLivro(ler.nextInt());
-                                System.out.println("Digite o titulo do livro: ");
-                                livro.setTitulo(ler.nextLine());
-                                System.out.println("Digite o genero do livro: ");
-                                livro.setGenero(ler.nextLine());
-                                System.out.println("Digite o Autor: ");
-                                livro.setAutor(ler.nextLine());
-                                System.out.println("Digite a Editora: ");
-                                livro.setEditora(ler.nextLine());
-                                System.out.println("Digite o  Ano: ");
-                                livro.setAno(ler.nextLine());
-                                System.out.println("Digite o Tipo(1- Físico / 2- Ebook) ");
-                                livro.setTipo(ler.nextInt());
+                        } while (continua);
 
-                                biblioteca.manipularLivrosFisicos.adicionarLivroFisico(livro);
+                    }
+                    case 2->{
 
-                                System.out.println("Livro cadastrado com sucesso!");
-                                livroLiberado = true;
-                                continua = false;
-                                break;
+                    }
+                    case 3->{
 
-                        }
-                        while (continua == true) {
-                            return;
-
-                        }
-                    case 3:
-//                      como deseja pesquisar o livro!!!!
-                        System.out.println("Digite o ID do livro que quer editar:");
-                        idLivro = ler.nextInt();
-                        ler.nextLine();
-                        Livro livro = biblioteca.manipularLivrosFisicos.buscaLivrosFisicos(idLivro);
-                        if (livro != null) {
-                            biblioteca.manipularLivrosFisicos.editarLivrofisico();
-                            livroLiberado = true;
-                        } else {
-                            System.out.println("Livro não encontrado.");
-                        }
-                    case 3:
-//                      como deseja pesquisar o livro!!!!
-                        System.out.println("Digite o ID do livro que quer editar:");
-                        idLivro = ler.nextInt();
-                        ler.nextLine();
-                        Livro livro = biblioteca.manipularLivrosFisicos.buscaLivrosFisicos(idLivro);
-                        if (livro != null) {
-                            biblioteca.manipularLivrosFisicos.removerLivroFisicoPorId();
-                            livroLiberado = true;
-                        } else {
-                            System.out.println("Livro não encontrado.");
-                        }
-                        break;
-
+                    }
+                    default -> {
+                        System.err.println("Opção Invalida!");
+                    }
                 }
 
+            }while (continua == true);
 
-            } while (continua);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         }
