@@ -57,7 +57,12 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
     }
 
     public void devolverLivro(Usuario usuario, int idEmprestimo){
-        biblioteca.getListaEmprestimos().get(idEmprestimo).getLivroEmprestimo().setDisponivel(true);
+        if(idEmprestimo <= biblioteca.getListaEmprestimos().size()) {
+            biblioteca.getListaEmprestimos().get(idEmprestimo).getLivroEmprestimo().setDisponivel(true);
+            biblioteca.getListaEmprestimos().get(idEmprestimo).setFinalizado(true);
+        } else {
+            System.out.println("O número de protocolo não foi encontrado, tente novamente!");
+        }
     }
 
 }

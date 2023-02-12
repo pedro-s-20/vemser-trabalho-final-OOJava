@@ -7,9 +7,19 @@ public class Aluguel{
     private double valorMulta;
     private Livro livroEmprestimo;
     private Usuario pessoa;
+    private boolean finalizado = false;
+
+    public boolean isFinalizado() {
+        return finalizado;
+    }
+
+    public void setFinalizado(boolean finalizado) {
+        this.finalizado = finalizado;
+    }
 
     public void imprimeAluguel(){
         System.out.println("Aluguel de ID: " + getIdAluguel());
+        System.out.println("Finalizado: ");
         System.out.println("----------------------------------");
         livroEmprestimo.imprimirDadosLivro();
     }

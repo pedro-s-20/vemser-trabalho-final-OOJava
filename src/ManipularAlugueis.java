@@ -9,6 +9,7 @@ public class ManipularAlugueis {
     public void adicionarAluguel(Aluguel emprestimo) {
         biblioteca.getListaEmprestimos().add(emprestimo);
         biblioteca.setContadorDeAlugueis();
+        emprestimo.setFinalizado(false);
     }
 
     public void removerAluguel(int idEmprestimo){
