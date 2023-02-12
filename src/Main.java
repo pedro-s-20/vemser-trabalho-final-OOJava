@@ -299,12 +299,13 @@ public class Main {
                                     break;
 
                                 case 3:
-//                      como deseja pesquisar o livro!!!!
-//                                    Livro livro = retorno da pesquisa;
+//
                                     do {
                                         System.out.println("Digite o Tipo (1- Físico / 2- Ebook) ");
                                         tipoDeLivro = ler.nextInt();
                                         ler.nextLine();
+//                                        como deseja pesquisar o livro!!!!
+//                                    Livro livroArray = retorno da pesquisa;
                                         switch (tipoDeLivro){
                                             case 1->{
                                                 Livro editar = new Livro();
@@ -321,44 +322,55 @@ public class Main {
                                                 System.out.println("Digite o  Ano: ");
                                                 editar.setAno(ler.nextLine());
                                                 editar.setTipo(1);
-                                                biblioteca.manipularLivrosFisicos.editarLivrofisico(editar);
+                                                biblioteca.manipularLivrosFisicos.editarLivrofisico(editar, livroArray);
                                             }
                                             case 2 ->{
                                                 Livro editar = new Livro();
-                                                livro.setIdLivro(biblioteca.getContadorDeLivros());
+                                                editar.setIdLivro(biblioteca.getContadorDeLivros());
                                                 System.out.println("Digite o titulo do livro: ");
-                                                livro.setTitulo(ler.nextLine());
+                                                editar.setTitulo(ler.nextLine());
                                                 System.out.println("Digite o genero do livro: ");
-                                                livro.setGenero(ler.nextLine());
+                                                editar.setGenero(ler.nextLine());
                                                 System.out.println("Digite o Autor: ");
-                                                livro.setAutor(ler.nextLine());
+                                                editar.setAutor(ler.nextLine());
                                                 System.out.println("Digite a Editora: ");
-                                                livro.setEditora(ler.nextLine());
+                                                editar.setEditora(ler.nextLine());
                                                 System.out.println("Digite o  Ano: ");
-                                                livro.setAno(ler.nextLine());
-                                                livro.setTipo(2);
-                                                biblioteca.manipularEbooks.editarEbook(livro.getIdLivro(), editar);
+                                                editar.setAno(ler.nextLine());
+                                                editar.setTipo(2);
+                                                biblioteca.manipularEbooks.editarEbook(editar, livroArray);
                                             }
                                             default -> {
                                                 System.err.println("Valor invalido!");
                                             }
                                         }
                                     }while (tipoDeLivro < 1 || tipoDeLivro > 2);
-                                    System.out.println("Livro cadastrado com sucesso!");
+                                    System.out.println("Livro editado com sucesso!");
                                     break;
 
                                 case 4:
-//                      como deseja remover o livro!!!!
-                                    System.out.println("Digite o ID do livro que deseja remover:");
-                                    idLivro = ler.nextInt();
-                                    ler.nextLine();
-                                    Livro ebook = biblioteca.manipularEbooks.buscaEbooks(idLivro);
-                                    if (ebook != null) {
-                                        biblioteca.manipularEbooks.removerEbook();
-                                        livroLiberado = true;
-                                    } else {
-                                        System.out.println("Livro não encontrado.");
-                                    }
+
+                                    do {
+                                        System.out.println("Digite o Tipo (1- Físico / 2- Ebook) ");
+                                        tipoDeLivro = ler.nextInt();
+                                        ler.nextLine();
+    //                                        como deseja pesquisar o livro!!!!
+    //                                    Livro livroArray = retorno da pesquisa;
+                                        switch (tipoDeLivro){
+                                            case 1->{
+                                                
+                                                biblioteca.manipularLivrosFisicos.removerLivroFisicoPorId(editar, livroArray);
+                                            }
+                                            case 2 ->{
+
+                                                biblioteca.manipularEbooks.editarEbook(editar, livroArray);
+                                            }
+                                            default -> {
+                                                System.err.println("Valor invalido!");
+                                            }
+                                        }
+                                    }while (tipoDeLivro < 1 || tipoDeLivro > 2);
+                                    System.out.println("Livro editado com sucesso!");
                                     break;
 
                             }
