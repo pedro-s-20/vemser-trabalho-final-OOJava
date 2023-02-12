@@ -11,7 +11,7 @@ public class AcervoDaBiblioteca {
     public ManipularLivrosFisicos manipularLivrosFisicos;
     public ManipularUsuarios manipularUsuarios;
 
-    private int contadorDeAlgueis;
+    private int contadorDeAlgueis = 0;
     private int contadorDeLivros;
     private int contadorDeUsuarios;
 
@@ -64,7 +64,7 @@ public class AcervoDaBiblioteca {
         return contadorDeAlgueis;
     }
 
-    public void setContadorDeAlgueis() {
+    public void setContadorDeAlugueis() {
         this.contadorDeAlgueis++;
     }
 

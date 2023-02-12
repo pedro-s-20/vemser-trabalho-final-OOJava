@@ -2,15 +2,24 @@ public class Aluguel{
 
     private static final double MULTA_POR_ATRASO = 2;
 
-    private String idAluguel;
+    private int idAluguel;
     private int quantidadeDeDias;
     private double valorMulta;
     private Livro livroEmprestimo;
+    private Usuario pessoa;
 
     public void imprimeAluguel(){
         System.out.println("Aluguel de ID: " + getIdAluguel());
         System.out.println("----------------------------------");
         livroEmprestimo.imprimirDadosLivro();
+    }
+
+    public Usuario getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Usuario pessoa) {
+        this.pessoa = pessoa;
     }
 
     public int getQuantidadeDeDias() {
@@ -29,11 +38,11 @@ public class Aluguel{
         this.livroEmprestimo = livroEmprestimo;
     }
 
-    public String getIdAluguel() {
+    public int getIdAluguel() {
         return idAluguel;
     }
 
-    public void setIdAluguel(String idLivro) {
+    public void setIdAluguel(int idLivro) {
         this.idAluguel = idAluguel;
     }
 

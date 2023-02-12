@@ -37,12 +37,27 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
         return livroBuscado;
     }
 
-    public void emprestarLivro(Usuario usuario, int id){
-
+    public void emprestarLivro(Usuario usuario, Livro livro){
+        if(livro.isDisponivel()){
+            livro.setDisponivel(false);
+            biblioteca.setContadorDeAlugueis();
+            Aluguel aluguelLivro = new Aluguel();
+            aluguelLivro.setIdAluguel(biblioteca.getContadorDeAlgueis());
+            if(usuario.getTipoUsuario() == 1){
+                aluguelLivro.setQuantidadeDeDias(7);
+            } else {
+                aluguelLivro.setQuantidadeDeDias(14);
+            }
+            aluguelLivro.setPessoa(usuario);
+            biblioteca.manipularAlugueis.adicionarAluguel(aluguelLivro);
+            System.out.println("O número do seu protocolo é: " + biblioteca.getContadorDeAlgueis());
+        } else {
+            System.out.println("O livro escolhido não está disponível!");
+        }
     }
 
-    public void devolverLivro(Usuario usuario, int id){
-
+    public void devolverLivro(Usuario usuario, int idEmprestimo){
+        biblioteca.getListaEmprestimos().get(idEmprestimo).getLivroEmprestimo().setDisponivel(true);
     }
 
 }

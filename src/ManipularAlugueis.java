@@ -8,7 +8,7 @@ public class ManipularAlugueis {
 
     public void adicionarAluguel(Aluguel emprestimo) {
         biblioteca.getListaEmprestimos().add(emprestimo);
-        biblioteca.setContadorDeAlgueis();
+        biblioteca.setContadorDeAlugueis();
     }
 
     public void removerAluguel(int idEmprestimo){
@@ -31,8 +31,8 @@ public class ManipularAlugueis {
         }
     }
 
-    public Aluguel buscaAluguel(AcervoDaBiblioteca biblioteca, String idLivro){
-        Aluguel aluguelBuscado = (Aluguel) biblioteca.getListaEmprestimos().stream().filter(aluguel -> aluguel.getIdAluguel().equals(idLivro));
+    public Aluguel buscaAluguel(int idAluguel){
+        Aluguel aluguelBuscado = (Aluguel) biblioteca.getListaEmprestimos().stream().filter(aluguel -> aluguel.getIdAluguel() == idAluguel);
         return aluguelBuscado;
     }
 

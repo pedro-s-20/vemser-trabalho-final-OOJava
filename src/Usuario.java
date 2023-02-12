@@ -7,6 +7,16 @@ public abstract class Usuario implements Impressao {
     private int numero;
     private String cep;
 
+    //1- Estudante | 2 - Professor | 3 - Gestor | 4 - Administrador
+    private int tipoUsuario;
+
+    public int getTipoUsuario() {
+        return tipoUsuario;
+    }
+    public void setTipoUsuario(int tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
     public String getNome() {return nome;}
     public void setNome(String nome) {this.nome = nome;}
 
