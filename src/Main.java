@@ -205,7 +205,7 @@ public class Main {
 
                     break;
                 case 3:
-                    continuar = true;
+                    continuar = false;
                     break;
                 default:
                     System.err.println("Opção inválida!");
