@@ -15,7 +15,7 @@ Começamos com um menu principal da biblioteca aonde podemos escolher nos cadast
   
     
 Após isso podemos selecionar entre as categorias principais Usuário, Livro e Aluguel, dentro dessas categorias temos os opções para realizar o CRUD (create, read, update e delete) dos objetos.  
-Para o processo de interação com os arrays da collection list, utilizamos o stream api para otimizar códigos e manipulação dos arrays.
+Salvamos as informações digitadas pelo usuário em Arrayslists para utilizar os dados nos métodos e realizar verificações como a de tipo de usuário para conceder acesso a operação de gerenciar usuários.
   
 Na categoria de aluguel, temos também as opções de solicitar um empréstimo do livro, aonde é realizada a verificação da disponibilidade do livro selecionado e se o usuário informado é valido, gerando assim um protocolo de reserva, aonde ficam salvos o id do usuário, livro emprestado e protocolo da transação.  
 Essa transação altera o estado de disponibilidade do livro para alugado, impossibilitando o empréstimo de um livro que já foi alugado  
