@@ -38,6 +38,7 @@ public class ManipularUsuarios {
                     System.out.println("Index: " + contador);
                     administrativo.imprimir();
                 }
+                contador++;
 
             }
         }

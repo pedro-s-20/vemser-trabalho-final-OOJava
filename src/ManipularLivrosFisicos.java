@@ -12,7 +12,7 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
         biblioteca.setContadorDeLivros();
     }
 
-    public void removerLivroFisicoPorId(int index){
+    public void removerLivroFisico(int index){
         biblioteca.getLivrosFisicos().remove(index);
     }
 

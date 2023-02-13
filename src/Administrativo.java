@@ -11,13 +11,12 @@ public class Administrativo extends Usuario implements Impressao{
     @Override
     public void imprimir(){
 
-        System.out.println("------------------------");
         System.out.println("------ADMINISTRADOR-----");
-        System.out.println("Nome: " + getNome());
-        System.out.println("CPF: " + getCpf());
-        System.out.println("Endereço: " + getLogradouro() + ", " + getNumero() + ", bairro: " + getBairro());
-        System.out.println("CEP: " + getCep());
-        System.out.println("Telefone: " + getTelefone());
+        System.out.println("Nome: " + super.getNome());
+        System.out.println("CPF: " + super.getCpf());
+        System.out.println("Endereço: " + super.getLogradouro() + ", " + super.getNumero() + ", bairro: " + super.getBairro());
+        System.out.println("CEP: " + super.getCep());
+        System.out.println("Telefone: " + super.getTelefone());
         System.out.println("Matrícula: " + getMatricula());
         System.out.println("------------------------");
 

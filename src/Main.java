@@ -59,7 +59,7 @@ public class Main {
                         opcao = entradaUsu.nextInt();
                         entradaUsu.nextLine();
                         if (opcao < 1 || opcao > 5) {
-                            System.out.println("Opção inválida. Tente novamente.");
+                            System.err.println("Opção inválida. Tente novamente.");
                         }
                     } while (opcao < 1 || opcao > 4);
 
@@ -227,7 +227,7 @@ public class Main {
             System.out.println("[1] - Livros ");
             System.out.println("[2] - Alugueis");
             System.out.println("[3] - Usuarios");
-            System.out.println("[4] - Voltar");
+            System.out.println("[4] - Sair");
 
             opcao = ler.nextInt();
             ler.nextLine();
@@ -416,7 +416,7 @@ public class Main {
                                             System.out.println("Digite o index do livro a ser removido:");
                                             index = ler.nextInt();
                                             ler.nextLine();
-                                            biblioteca.manipularLivrosFisicos.removerLivroFisicoPorId(index);
+                                            biblioteca.manipularLivrosFisicos.removerLivroFisico(index);
                                             System.out.println("Livro removido com sucesso.");
                                         }
                                         case 2 -> {
@@ -502,42 +502,192 @@ public class Main {
 //                    }
                     System.out.println("Opção 02");
                 }
-                // BRUNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
                 case 3 ->{
-                    do {
-                        System.out.println("Escolha uma opção: ");
-                        System.out.println("[1] - Pesquisar usuário.");
-                        System.out.println("[2] - Editar usuário.");
-                        System.out.println("[3] - Listar usuários.");
-                        System.out.println("[4] - Remover usuário.");
-                        System.out.println("[6] - Sair.");
-                        opcao = ler.nextInt();
-                        ler.nextLine();
+                    if (usuarioLogado.getTipoUsuario() == 3 || usuarioLogado.getTipoUsuario() == 4){
 
-                        switch (opcao) {
-                            case 1 -> {
-                                String busca;
-                                System.out.println("Digite o cpf do usuario que deseja buscar:");
-                                busca = ler.nextLine();
-                                Usuario usuarioBuscado = biblioteca.manipularUsuarios.buscaUsuario(busca);
+                        do {
+                            System.out.println("Escolha uma opção: ");
+                            System.out.println("[1] - Pesquisar usuário.");
+                            System.out.println("[2] - Cadastrar usuário.");
+                            System.out.println("[3] - Editar usuário.");
+                            System.out.println("[4] - Listar usuários.");
+                            System.out.println("[5] - Remover usuário.");
+                            System.out.println("[6] - Sair.");
+                            opcao = ler.nextInt();
+                            ler.nextLine();
 
-                                if(usuarioBuscado.getTipoUsuario() == 1){
-                                    Estudante estudante = (Estudante) usuarioBuscado;
-                                    estudante.imprimir();
-                                }else if(usuarioBuscado.getTipoUsuario() == 2){
-                                    Professor professor = (Professor) usuarioBuscado;
-                                    professor.imprimir();
-                                }else if(usuarioBuscado.getTipoUsuario() == 3){
-                                    Gestor gestor = (Gestor) usuarioBuscado;
-                                    gestor.imprimir();
-                                }else if(usuarioBuscado.getTipoUsuario() == 4){
-                                    Administrativo administrativo = (Administrativo) usuarioBuscado;
-                                    administrativo.imprimir();
+                            switch (opcao) {
+                                case 1 -> {
+                                    String busca;
+                                    System.out.println("Digite o cpf do usuario que deseja buscar:");
+                                    busca = ler.nextLine();
+                                    Usuario usuarioBuscado = biblioteca.manipularUsuarios.buscaUsuario(busca);
+
+                                    if(usuarioBuscado.getTipoUsuario() == 1){
+                                        Estudante estudante = (Estudante) usuarioBuscado;
+                                        estudante.imprimir();
+                                    }else if(usuarioBuscado.getTipoUsuario() == 2){
+                                        Professor professor = (Professor) usuarioBuscado;
+                                        professor.imprimir();
+                                    }else if(usuarioBuscado.getTipoUsuario() == 3){
+                                        Gestor gestor = (Gestor) usuarioBuscado;
+                                        gestor.imprimir();
+                                    }else if(usuarioBuscado.getTipoUsuario() == 4){
+                                        Administrativo administrativo = (Administrativo) usuarioBuscado;
+                                        administrativo.imprimir();
+                                    }
+
                                 }
+                                case 2 -> {
+                                    do {
+                                        System.out.println("Qual tipo de usuário deseja cadastrar? ");
+                                        System.out.println("[1] - Estudante ");
+                                        System.out.println("[2] - Professor ");
+                                        System.out.println("[3] - Gestor ");
+                                        System.out.println("[4] - Administrador ");
+                                        System.out.println("[5] - Voltar");
+                                        opcao = ler.nextInt();
+                                        ler.nextLine();
+                                        if (opcao < 1 || opcao > 5) {
+                                            System.err.println("Opção inválida. Tente novamente.");
+                                        }
+                                    } while (opcao < 1 || opcao > 4);
 
-                            }
-                            case 2 -> {
-                                if (usuarioLogado.getTipoUsuario() == 3 || usuarioLogado.getTipoUsuario() == 4){
+                                    switch (opcao) {
+                                        case 1:
+                                            Estudante estudante = new Estudante();
+
+                                            estudante.setTipoUsuario(1);
+                                            System.out.println("Digite o nome: ");
+                                            estudante.setNome(ler.nextLine());
+
+                                            System.out.println("Digite o CPF: ");
+                                            estudante.setCpf(ler.nextLine());
+
+                                            System.out.println("Agora sobre o endereço");
+                                            System.out.println("Digite a rua: ");
+                                            estudante.setLogradouro(ler.nextLine());
+                                            System.out.println("Digite o bairro: ");
+                                            estudante.setBairro(ler.nextLine());
+                                            System.out.println("Digite o CEP: ");
+                                            estudante.setCep(ler.nextLine());
+                                            System.out.println("Digite o número: ");
+                                            estudante.setNumero(ler.nextLine());
+
+                                            System.out.println("Digite o telefone: ");
+                                            estudante.setTelefone(ler.nextLine());
+                                            System.out.println("Digite a matrícula");
+                                            estudante.setMatricula(ler.nextLine());
+
+                                            biblioteca.manipularUsuarios.adicionarUsuario(estudante);
+                                            estudante.imprimir();
+
+                                            System.out.println("---Usuário cadastrado com sucesso!---");
+                                            break;
+
+                                        case 2:
+                                            Professor professor = new Professor();
+
+                                            professor.setTipoUsuario(2);
+                                            System.out.println("Digite o nome: ");
+                                            professor.setNome(ler.nextLine());
+
+                                            System.out.println("Digite o CPF: ");
+                                            professor.setCpf(ler.nextLine());
+
+                                            System.out.println("Agora sobre o endereço");
+                                            System.out.println("Digite a rua: ");
+                                            professor.setLogradouro(ler.nextLine());
+                                            System.out.println("Digite o bairro: ");
+                                            professor.setBairro(ler.nextLine());
+                                            System.out.println("Digite o CEP: ");
+                                            professor.setCep(ler.nextLine());
+                                            System.out.println("Digite o número: ");
+                                            professor.setNumero(ler.nextLine());
+
+                                            System.out.println("Digite o telefone: ");
+                                            professor.setTelefone(ler.nextLine());
+                                            System.out.println("Digite a matrícula");
+                                            professor.setMatricula(ler.nextLine());
+
+                                            biblioteca.manipularUsuarios.adicionarUsuario(professor);
+                                            professor.imprimir();
+
+                                            System.out.println("---Usuário cadastrado com sucesso!---");
+                                            break;
+
+                                        case 3:
+                                            Gestor gestor = new Gestor();
+
+                                            gestor.setTipoUsuario(3);
+                                            System.out.println("Digite o nome: ");
+                                            gestor.setNome(ler.nextLine());
+
+                                            System.out.println("Digite o CPF: ");
+                                            gestor.setCpf(ler.nextLine());
+
+                                            System.out.println("Agora sobre o endereço");
+                                            System.out.println("Digite a rua: ");
+                                            gestor.setLogradouro(ler.nextLine());
+                                            System.out.println("Digite o bairro: ");
+                                            gestor.setBairro(ler.nextLine());
+                                            System.out.println("Digite o CEP: ");
+                                            gestor.setCep(ler.nextLine());
+                                            System.out.println("Digite o número: ");
+                                            gestor.setNumero(ler.nextLine());
+
+                                            System.out.println("Digite o telefone: ");
+                                            gestor.setTelefone(ler.nextLine());
+                                            System.out.println("Digite a matrícula");
+                                            gestor.setMatricula(ler.nextLine());
+
+                                            biblioteca.manipularUsuarios.adicionarUsuario(gestor);
+                                            gestor.imprimir();
+
+                                            System.out.println("---Usuário cadastrado com sucesso!---");
+                                            break;
+
+                                        case 4:
+                                            Administrativo administrativo = new Administrativo();
+
+                                            administrativo.setTipoUsuario(4);
+                                            System.out.println("Digite o nome: ");
+                                            administrativo.setNome(ler.nextLine());
+
+                                            System.out.println("Digite o CPF: ");
+                                            administrativo.setCpf(ler.nextLine());
+
+                                            System.out.println("Agora sobre o endereço");
+                                            System.out.println("Digite a rua: ");
+                                            administrativo.setLogradouro(ler.nextLine());
+                                            System.out.println("Digite o bairro: ");
+                                            administrativo.setBairro(ler.nextLine());
+                                            System.out.println("Digite o CEP: ");
+                                            administrativo.setCep(ler.nextLine());
+                                            System.out.println("Digite o número: ");
+                                            administrativo.setNumero(ler.nextLine());
+
+                                            System.out.println("Digite o telefone: ");
+                                            administrativo.setTelefone(ler.nextLine());
+                                            System.out.println("Digite a matrícula");
+                                            administrativo.setMatricula(ler.nextLine());
+
+                                            biblioteca.manipularUsuarios.adicionarUsuario(administrativo);
+                                            administrativo.imprimir();
+
+                                            System.out.println("---Usuário cadastrado com sucesso!---");
+                                            break;
+
+                                        case 5:
+                                            break;
+
+                                        default:
+                                            System.out.println("Ocorreu algum erro, verifique com um administrador.");
+                                            break;
+                                    }
+                                }
+                                case 3 -> {
                                     String cpf;
                                     biblioteca.manipularUsuarios.listarUsuarios();
                                     System.out.println("Digite o CPF do usuário que deseja editar: ");
@@ -565,17 +715,12 @@ public class Main {
                                     } else {
                                         System.out.println("Usuário não encontrado!");
                                     }
-                                } else {
-                                    System.out.println("Seu usuário não tem permissão para exercutar este comando.");
                                 }
-
-                            }
-                            case 3 -> {
-                                biblioteca.manipularUsuarios.listarUsuarios();
-                                System.out.println("Esses são os usuários cadastrados.");
-                            }
-                            case 4 -> {
-                                if (usuarioLogado.getTipoUsuario() == 3 || usuarioLogado.getTipoUsuario() == 4){
+                                case 4 -> {
+                                    biblioteca.manipularUsuarios.listarUsuarios();
+                                    System.out.println("Esses são os usuários cadastrados.");
+                                }
+                                case 5 -> {
                                     System.out.println("Lista de usuários: ");
                                     biblioteca.manipularUsuarios.listarUsuarios();
                                     System.out.println("Digite o index do usuário a ser removido:");
@@ -584,19 +729,24 @@ public class Main {
                                     if(index < 0 || index >= biblioteca.getListaDeUsuarios().size()){
                                         System.out.println("Valor inválido. Tente novamente.");
                                     }else{
-                                        biblioteca.getListaDeUsuarios().remove(index);
-                                        System.out.println("Usuário removido com sucesso.");
+                                        if(biblioteca.getListaDeUsuarios().get(index).getCpf().equals(usuarioLogado.getCpf())){
+                                            System.out.println("Você não pode remover seu usuário.");
+                                        }else{
+                                            biblioteca.manipularUsuarios.removerUsuarioPorIndice(index);
+                                            System.out.println("Usuário removido com sucesso.");
+                                        }
                                     }
-                                } else {
-                                    System.out.println("Seu usuário não tem permissão para exercutar este comando.");
                                 }
                             }
-                        }
-                    } while (opcao != 6);
+                        } while (opcao != 6);
+                    } else {
+                        System.out.println("Seu usuário não tem permissão para acessar essas opções. Contate o administrador.");
+                    }
                 }
                 case 4 ->{
                     continua = false;
                 }
+
 
             }
         }while (continua == true);
