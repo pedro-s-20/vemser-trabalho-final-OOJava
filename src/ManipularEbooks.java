@@ -35,6 +35,19 @@ public class ManipularEbooks implements EmprestimoEDevolucaoDeLivro {
         }
     }
 
+    public Livro buscaEbookPorNome(String busca) {
+        Livro livro = null;
+        for (int i = 0; i < biblioteca.getEbooks().size(); i++) {
+            if (biblioteca.getEbooks().get(i).getTitulo().toLowerCase().equals(busca.toLowerCase())) {
+                biblioteca.getEbooks().get(i).imprimirDadosLivro();
+                livro = biblioteca.getEbooks().get(i);
+            } else {
+                System.out.println("O livro não foi encontrado!");
+            }
+        }
+        return livro;
+    }
+
     public Livro buscaEbooks(int idLivro){
         Livro livroBuscado = null;
 

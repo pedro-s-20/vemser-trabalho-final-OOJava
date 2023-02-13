@@ -32,6 +32,19 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
         }
     }
 
+    public Livro buscaLivroPorNome(String busca) {
+        Livro livro = null;
+        for (int i = 0; i < biblioteca.getLivrosFisicos().size(); i++) {
+            if (biblioteca.getLivrosFisicos().get(i).getTitulo().toLowerCase().equals(busca.toLowerCase())) {
+                biblioteca.getLivrosFisicos().get(i).imprimirDadosLivro();
+                livro = biblioteca.getLivrosFisicos().get(i);
+            } else {
+                System.out.println("O livro não foi encontrado!");
+            }
+        }
+        return livro;
+    }
+
     public Livro buscaLivrosFisicos(int idLivro){
 
         Livro livroBuscado = null;
