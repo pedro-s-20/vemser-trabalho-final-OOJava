@@ -519,39 +519,60 @@ public class Main {
                                 String busca;
                                 System.out.println("Digite o cpf do usuario que deseja buscar:");
                                 busca = ler.nextLine();
-                                biblioteca.manipularUsuarios.buscaUsuario(busca);
+                                Usuario usuarioBuscado = biblioteca.manipularUsuarios.buscaUsuario(busca);
+
+                                if(usuarioBuscado.getTipoUsuario() == 1){
+                                    Estudante estudante = (Estudante) usuarioBuscado;
+                                    estudante.imprimir();
+                                }else if(usuarioBuscado.getTipoUsuario() == 2){
+                                    Professor professor = (Professor) usuarioBuscado;
+                                    professor.imprimir();
+                                }else if(usuarioBuscado.getTipoUsuario() == 3){
+                                    Gestor gestor = (Gestor) usuarioBuscado;
+                                    gestor.imprimir();
+                                }else if(usuarioBuscado.getTipoUsuario() == 4){
+                                    Administrativo administrativo = (Administrativo) usuarioBuscado;
+                                    administrativo.imprimir();
+                                }
+
                             }
                             case 2 -> {
-                                String cpf;
-                                biblioteca.manipularUsuarios.listarUsuarios();
-                                System.out.println("Digite o CPF do usuário que deseja editar: ");
-                                cpf = ler.nextLine();
+                                if (usuarioLogado.getTipoUsuario() == 3 || usuarioLogado.getTipoUsuario() == 4){
+                                    String cpf;
+                                    biblioteca.manipularUsuarios.listarUsuarios();
+                                    System.out.println("Digite o CPF do usuário que deseja editar: ");
+                                    cpf = ler.nextLine();
 
-                                if (biblioteca.manipularUsuarios.buscaUsuario(cpf) != null){
-                                    Usuario buscaUsuario = biblioteca.manipularUsuarios.buscaUsuario(cpf);
+                                    if (biblioteca.manipularUsuarios.buscaUsuario(cpf) != null){
+                                        Usuario buscaUsuario = biblioteca.manipularUsuarios.buscaUsuario(cpf);
 
-                                    System.out.println("Digite o novo nome do usuário: ");
-                                    buscaUsuario.setNome(ler.nextLine());
-                                    System.out.println("Digite o novo cpf do usuário: ");
-                                    buscaUsuario.setCpf(ler.nextLine());
-                                    System.out.println("Digite o novo nome do usuário: ");
-                                    buscaUsuario.setTelefone(ler.nextLine());
-                                    System.out.println("Digite o novo logradouro do usuário: ");
-                                    buscaUsuario.setLogradouro(ler.nextLine());
-                                    System.out.println("Digite o novo número: ");
-                                    buscaUsuario.setNumero(ler.nextLine());
-                                    System.out.println("Digite o novo bairro: ");
-                                    buscaUsuario.setBairro(ler.nextLine());
-                                    System.out.println("Digite o novo cep: ");
-                                    buscaUsuario.setCep(ler.nextLine());
+                                        System.out.println("Digite o novo nome do usuário: ");
+                                        buscaUsuario.setNome(ler.nextLine());
+                                        System.out.println("Digite o novo cpf do usuário: ");
+                                        buscaUsuario.setCpf(ler.nextLine());
+                                        System.out.println("Digite o novo nome do usuário: ");
+                                        buscaUsuario.setTelefone(ler.nextLine());
+                                        System.out.println("Digite o novo logradouro do usuário: ");
+                                        buscaUsuario.setLogradouro(ler.nextLine());
+                                        System.out.println("Digite o novo número: ");
+                                        buscaUsuario.setNumero(ler.nextLine());
+                                        System.out.println("Digite o novo bairro: ");
+                                        buscaUsuario.setBairro(ler.nextLine());
+                                        System.out.println("Digite o novo cep: ");
+                                        buscaUsuario.setCep(ler.nextLine());
 
-                                    System.out.println("Usuário editado com sucesso!");
+                                        System.out.println("Usuário editado com sucesso!");
+                                    } else {
+                                        System.out.println("Usuário não encontrado!");
+                                    }
                                 } else {
-                                    System.out.println("Usuário não encontrado!");
+                                    System.out.println("Seu usuário não tem permissão para exercutar este comando.");
                                 }
+
                             }
                             case 3 -> {
                                 biblioteca.manipularUsuarios.listarUsuarios();
+                                System.out.println("Esses são os usuários cadastrados.");
                             }
                             case 4 -> {
                                 if (usuarioLogado.getTipoUsuario() == 3 || usuarioLogado.getTipoUsuario() == 4){
@@ -560,8 +581,12 @@ public class Main {
                                     System.out.println("Digite o index do usuário a ser removido:");
                                     index = ler.nextInt();
                                     ler.nextLine();
-                                    biblioteca.getListaDeUsuarios().remove(index);
-                                    System.out.println("Usuário removido com sucesso.");
+                                    if(index < 0 || index >= biblioteca.getListaDeUsuarios().size()){
+                                        System.out.println("Valor inválido. Tente novamente.");
+                                    }else{
+                                        biblioteca.getListaDeUsuarios().remove(index);
+                                        System.out.println("Usuário removido com sucesso.");
+                                    }
                                 } else {
                                     System.out.println("Seu usuário não tem permissão para exercutar este comando.");
                                 }
