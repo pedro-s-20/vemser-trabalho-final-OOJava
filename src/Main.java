@@ -504,7 +504,70 @@ public class Main {
                 }
                 // BRUNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
                 case 3 ->{
-                    System.out.println("Opção 03");
+                    do {
+                        System.out.println("Escolha uma opção: ");
+                        System.out.println("[1] - Pesquisar usuário.");
+                        System.out.println("[2] - Editar usuário.");
+                        System.out.println("[3] - Listar usuários.");
+                        System.out.println("[4] - Remover usuário.");
+                        System.out.println("[6] - Sair.");
+                        opcao = ler.nextInt();
+                        ler.nextLine();
+
+                        switch (opcao) {
+                            case 1 -> {
+                                String busca;
+                                System.out.println("Digite o cpf do usuario que deseja buscar:");
+                                busca = ler.nextLine();
+                                biblioteca.manipularUsuarios.buscaUsuario(busca);
+                            }
+                            case 2 -> {
+                                String cpf;
+                                biblioteca.manipularUsuarios.listarUsuarios();
+                                System.out.println("Digite o CPF do usuário que deseja editar: ");
+                                cpf = ler.nextLine();
+
+                                if (biblioteca.manipularUsuarios.buscaUsuario(cpf) != null){
+                                    Usuario buscaUsuario = biblioteca.manipularUsuarios.buscaUsuario(cpf);
+
+                                    System.out.println("Digite o novo nome do usuário: ");
+                                    buscaUsuario.setNome(ler.nextLine());
+                                    System.out.println("Digite o novo cpf do usuário: ");
+                                    buscaUsuario.setCpf(ler.nextLine());
+                                    System.out.println("Digite o novo nome do usuário: ");
+                                    buscaUsuario.setTelefone(ler.nextLine());
+                                    System.out.println("Digite o novo logradouro do usuário: ");
+                                    buscaUsuario.setLogradouro(ler.nextLine());
+                                    System.out.println("Digite o novo número: ");
+                                    buscaUsuario.setNumero(ler.nextLine());
+                                    System.out.println("Digite o novo bairro: ");
+                                    buscaUsuario.setBairro(ler.nextLine());
+                                    System.out.println("Digite o novo cep: ");
+                                    buscaUsuario.setCep(ler.nextLine());
+
+                                    System.out.println("Usuário editado com sucesso!");
+                                } else {
+                                    System.out.println("Usuário não encontrado!");
+                                }
+                            }
+                            case 3 -> {
+                                biblioteca.manipularUsuarios.listarUsuarios();
+                            }
+                            case 4 -> {
+                                if (usuarioLogado.getTipoUsuario() == 3 || usuarioLogado.getTipoUsuario() == 4){
+                                    System.out.println("Lista de usuários: ");
+                                    biblioteca.manipularUsuarios.listarUsuarios();
+                                    System.out.println("Digite o index do usuário a ser removido:");
+                                    index = ler.nextInt();
+                                    ler.nextLine();
+                                    biblioteca.getListaDeUsuarios().remove(index);
+                                    System.out.println("Usuário removido com sucesso.");
+                                } else {
+                                    System.out.println("Seu usuário não tem permissão para exercutar este comando.");
+                                }
+                            }
+                        }
+                    } while (opcao != 6);
                 }
                 case 4 ->{
                     continua = false;

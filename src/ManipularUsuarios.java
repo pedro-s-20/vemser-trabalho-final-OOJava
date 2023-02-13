@@ -16,10 +16,13 @@ public class ManipularUsuarios {
     }
 
     public void listarUsuarios(){
+        int contador = 0;
         if(biblioteca.getListaDeUsuarios().isEmpty()){
             System.out.println("Sem usuários cadastrados.");
-        }else{
-            biblioteca.getListaDeUsuarios().stream().forEach(usuario -> usuario.imprimir());
+        } else {
+            for (Usuario usuario: biblioteca.getListaDeUsuarios()) {
+                System.out.println("Index: " + contador + " Usuário - ");
+            }
         }
     }
 
