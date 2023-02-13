@@ -68,31 +68,38 @@ public class ManipularEbooks implements EmprestimoEDevolucaoDeLivro {
         return livroBuscado;
     }
     @Override
-    public void emprestarLivro(Usuario usuario, Livro livro){
-        if(livro.isDisponivel()){
-            livro.setDisponivel(false);
-            biblioteca.setContadorDeAlugueis();
-            Aluguel aluguelLivro = new Aluguel();
-            aluguelLivro.setIdAluguel(biblioteca.getContadorDeAlgueis());
-            if(usuario.getTipoUsuario() == 1){
-                aluguelLivro.setQuantidadeDeDias(7);
+    public void emprestarLivro(String cpf, Livro livro){
+        if (biblioteca.manipularUsuarios.buscaUsuario(cpf) != null) {
+            Usuario usuario = biblioteca.manipularUsuarios.buscaUsuario(cpf);
+            if (livro.isDisponivel()) {
+                livro.setDisponivel(false);
+                biblioteca.setContadorDeAlugueis();
+                Aluguel aluguelLivro = new Aluguel();
+                aluguelLivro.setIdAluguel(biblioteca.getContadorDeAlgueis());
+                if (usuario.getTipoUsuario() == 1) {
+                    aluguelLivro.setQuantidadeDeDias(7);
+                } else {
+                    aluguelLivro.setQuantidadeDeDias(14);
+                }
+                aluguelLivro.setPessoa(usuario);
+                biblioteca.manipularAlugueis.adicionarAluguel(aluguelLivro);
+                System.out.println("O número do seu protocolo é: " + biblioteca.getContadorDeAlgueis());
             } else {
-                aluguelLivro.setQuantidadeDeDias(14);
+                System.out.println("O livro escolhido não está disponível!");
             }
-            aluguelLivro.setPessoa(usuario);
-            biblioteca.manipularAlugueis.adicionarAluguel(aluguelLivro);
-            System.out.println("O número do seu protocolo é: " + biblioteca.getContadorDeAlgueis());
         } else {
-            System.out.println("O livro escolhido não está disponível!");
+            System.out.println("Usuário inválido!");
         }
     }
     @Override
-    public void devolverLivro(Usuario usuario, int idEmprestimo){
-        if(idEmprestimo <= biblioteca.getListaEmprestimos().size()) {
-            biblioteca.getListaEmprestimos().get(idEmprestimo).getLivroEmprestimo().setDisponivel(true);
-            biblioteca.getListaEmprestimos().get(idEmprestimo).setFinalizado(true);
-        } else {
-            System.out.println("O número de protocolo não foi encontrado, tente novamente!");
+    public void devolverLivro(String cpf, int idEmprestimo){
+        if (biblioteca.manipularUsuarios.buscaUsuario(cpf) != null) {
+            if (idEmprestimo <= biblioteca.getListaEmprestimos().size()) {
+                biblioteca.getListaEmprestimos().get(idEmprestimo).getLivroEmprestimo().setDisponivel(true);
+                biblioteca.getListaEmprestimos().get(idEmprestimo).setFinalizado(true);
+            } else {
+                System.out.println("O número de protocolo não foi encontrado, tente novamente!");
+            }
         }
     }
 

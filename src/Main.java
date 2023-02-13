@@ -459,64 +459,29 @@ public class Main {
 
                     switch(opcao){
                         case 1->{
-//                            System.out.println("Escolha como deseja pesquisar o empréstimo:");
-//                            System.out.println("[1] - Pesquisar cpf de usuário.");
-//                            System.out.println("[2] - Pesquisar por título.");
-//                            System.out.println("[3] - Pesquisar por nome do usuário.");
-//                            System.out.println("[9] - Sair.");
-//                            opcao = ler.nextInt();
-//                            ler.nextLine();
-//
-//                            switch (opcao) {
-//                                case 1 -> {
-//                                    String cpf;
-//                                    System.out.println("Digite o cpf do usuário: ");
-//                                    cpf = ler.nextLine();
-//                                    for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-//                                        if (biblioteca.getListaEmprestimos().get(i).getPessoa().getCpf().equals(cpf)) {
-//                                            biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-//                                        } else {
-//                                            System.out.println("Não existem empréstimos para esse cpf.");
-//                                        }
-//                                    }
-//                                }
-//                                case 2 -> {
-//                                    String titulo;
-//                                    System.out.println("Digite o titulo que deseja buscar: ");
-//                                    titulo = ler.nextLine();
-//                                    for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-//                                        if (biblioteca.getListaEmprestimos().get(i).getLivro.getTitulo().equals(titulo)) {
-//                                            biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-//                                        } else {
-//                                            System.out.println("Não existem empréstimos para esse título.");
-//                                        }
-//                                    }
-//                                }
-//                                case 3 -> {
-//                                    String nome;
-//                                    System.out.println("Digite o nome do usuário que deseja buscar: ");
-//                                    nome = ler.nextLine();
-//                                    for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-//                                        if (biblioteca.getListaEmprestimos().get(i).getPessoa.getNome().equals(nome)) {
-//                                            biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-//                                        } else {
-//                                            System.out.println("Não existem empréstimos para essa pessoa.");
-//                                        }
-//                                    }
-//                                }
-//                                case 9 -> {
-//                                    default -> {
-//                                        System.err.println("Opção Invalida!");
-//                                    }
-//
-//                                }
-//                            }
-                            //PENDENTE
-                            System.out.println("Pendente! - EMPRESTAR");
+                            String cpf;
+                            String nomeLivro;
+                            System.out.println("Digite seu cpf: ");
+                            cpf = ler.nextLine();
+                            System.out.println("Digite o nome do livro que deseja:");
+                            nomeLivro = ler.nextLine();
+                            if (biblioteca.manipularLivrosFisicos.buscaLivroPorNome(nomeLivro) != null) {
+                                biblioteca.manipularLivrosFisicos.emprestarLivro(cpf, biblioteca.manipularLivrosFisicos.buscaLivroPorNome(nomeLivro));
+                            } else if (biblioteca.manipularEbooks.buscaEbookPorNome(nomeLivro) != null) {
+                                biblioteca.manipularLivrosFisicos.emprestarLivro(cpf, biblioteca.manipularEbooks.buscaEbookPorNome(nomeLivro));
+                            } else {
+                                System.out.println("Livro não encontrado!");
+                            }
                         }
                         case 2->{
-                            //PENDENTE
-                            System.out.println("Pendente! - DEVOLVER");
+                            String cpf;
+                            int idEmprestimo;
+                            System.out.println("Digite o seu cpf");
+                            cpf = ler.nextLine();
+                            System.out.println("Digite o id do emprestimo: ");
+                            idEmprestimo = ler.nextInt();
+                            ler.nextLine();
+                            biblioteca.manipularLivrosFisicos.devolverLivro(cpf, idEmprestimo);
                         }
                         case 3->{
                             biblioteca.manipularAlugueis.listarEmprestimos();
