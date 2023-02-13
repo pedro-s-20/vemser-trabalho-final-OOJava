@@ -10,9 +10,8 @@ public class Main {
         Usuario usuarioAcessado = null;
         usuarioAcessado = telaLogin();
 
-
         if (usuarioAcessado != null) {
-            telaInicial();
+            telaInicial(usuarioAcessado);
         } else {
             System.out.println("Programa finalizado.");
         }
@@ -22,8 +21,8 @@ public class Main {
     static Usuario telaLogin () {
 
         Scanner entradaUsu = new Scanner(System.in);
-        boolean acessoLiberado = false, continuar = true;
-        int opcao = 0;
+        boolean continuar = true;
+        int opcao;
         String cpfUsuario;
 
         Usuario usuarioAcessado = null;
@@ -33,9 +32,7 @@ public class Main {
             System.out.println("Escolha uma opção: ");
             System.out.println("[1] - Já sou cadastrado.");
             System.out.println("[2] - Quero me cadastrar.");
-            System.out.println("[3] - Editar cadastro.");
-            System.out.println("[4] - Excluir cadastro.");
-            System.out.println("[5] - Sair.");
+            System.out.println("[3] - Sair.");
             opcao = entradaUsu.nextInt();
             entradaUsu.nextLine();
 
@@ -45,7 +42,6 @@ public class Main {
                     cpfUsuario = entradaUsu.nextLine();
                     if (biblioteca.manipularUsuarios.buscaUsuario(cpfUsuario) != null) {
                         usuarioAcessado = biblioteca.manipularUsuarios.buscaUsuario(cpfUsuario);
-                        acessoLiberado = true;
                         continuar = false;
                     } else {
                         System.out.println("Usuário não encontrado. Tente novamente.");
@@ -53,8 +49,6 @@ public class Main {
                     break;
 
                 case 2:
-                    opcao = 0;
-
                     do {
                         System.out.println("Qual tipo de usuário você pertence? ");
                         System.out.println("[1] - Estudante ");
@@ -99,7 +93,6 @@ public class Main {
 
                             System.out.println("---Usuário cadastrado com sucesso!---");
                             System.out.println("--Agora faça seu login.--");
-                            acessoLiberado = false;
                             continuar = true;
                             break;
 
@@ -133,7 +126,6 @@ public class Main {
 
                             System.out.println("---Usuário cadastrado com sucesso!---");
                             System.out.println("--Agora faça seu login.--");
-                            acessoLiberado = false;
                             continuar = true;
                             break;
 
@@ -166,7 +158,6 @@ public class Main {
 
                             System.out.println("---Usuário cadastrado com sucesso!---");
                             System.out.println("--Agora faça seu login.--");
-                            acessoLiberado = false;
                             continuar = true;
                             break;
 
@@ -199,7 +190,6 @@ public class Main {
 
                             System.out.println("---Usuário cadastrado com sucesso!---");
                             System.out.println("--Agora faça seu login.--");
-                            acessoLiberado = false;
                             continuar = true;
                             break;
 
@@ -214,8 +204,7 @@ public class Main {
                     }
 
                     break;
-                    case 3:
-                    acessoLiberado = true;
+                case 3:
                     continuar = true;
                     break;
                 default:
@@ -227,7 +216,7 @@ public class Main {
 
     }
 
-    static void telaInicial () {
+    static void telaInicial (Usuario usuarioLogado) {
         Scanner ler = new Scanner(System.in);
         boolean livroLiberado = false, continua = true;
         int opcao = 0;
@@ -252,15 +241,39 @@ public class Main {
                         System.out.println("[3] - Editar Livro");
                         System.out.println("[4] - Listar Livro");
                         System.out.println("[5] - Remover Livro");
-                        System.out.println("[6] - Sair.");
+                        System.out.println("[6] - Voltar.");
                         opcao = ler.nextInt();
                         ler.nextLine();
 
                         switch (opcao) {
                             case 1:
-//                                    menu de escolha do tipo de pesquisa.
-                                System.out.println("Digite o ID do livro ");
-                                idLivro = ler.nextInt();
+                                do {
+                                    System.out.println("Digite o Tipo de livro que deseja pesquisar (1- Físico / 2- Ebook) ");
+                                    tipoDeLivro = ler.nextInt();
+                                    ler.nextLine();
+
+                                    switch (tipoDeLivro) {
+                                        case 1 -> {
+                                            System.out.println("Digite o título da obra que procura: ");
+                                            Livro livroEncontrado = biblioteca.manipularLivrosFisicos.buscaLivroPorNome(ler.nextLine());
+                                            if(livroEncontrado != null){
+                                                System.out.println("Estas são as informações encontradas do livro: ");
+                                                livroEncontrado.imprimirDadosLivro();
+                                            }
+                                        }
+                                        case 2 -> {
+                                            System.out.println("Digite o título da obra que procura: ");
+                                            Livro livroEncontrado = biblioteca.manipularEbooks.buscaEbookPorNome(ler.nextLine());
+                                            if(livroEncontrado != null){
+                                                System.out.println("Estas são as informações encontradas do livro: ");
+                                                livroEncontrado.imprimirDadosLivro();
+                                            }
+                                        }
+                                        default -> {
+                                            System.err.println("Valor invalido!");
+                                        }
+                                    }
+                                } while (tipoDeLivro < 1 || tipoDeLivro > 2);
                                 break;
 
                             case 2:
@@ -275,7 +288,7 @@ public class Main {
                                 livro.setAutor(ler.nextLine());
                                 System.out.println("Digite a Editora: ");
                                 livro.setEditora(ler.nextLine());
-                                System.out.println("Digite o  Ano: ");
+                                System.out.println("Digite o Ano: ");
                                 livro.setAno(ler.nextLine());
                                 do {
                                     System.out.println("Digite o Tipo (1- Físico / 2- Ebook) ");
@@ -299,46 +312,67 @@ public class Main {
                                 break;
 
                             case 3:
-//
                                 do {
                                     System.out.println("Digite o Tipo (1- Físico / 2- Ebook) ");
                                     tipoDeLivro = ler.nextInt();
                                     ler.nextLine();
-//                                        como deseja pesquisar o livro!!!!
-//                                    Livro livroArray = retorno da pesquisa;
                                     switch (tipoDeLivro) {
                                         case 1 -> {
-                                            Livro editar = new Livro();
 
-                                            editar.setIdLivro(biblioteca.getContadorDeLivros());
-                                            System.out.println("Digite o titulo do livro: ");
-                                            editar.setTitulo(ler.nextLine());
-                                            System.out.println("Digite o genero do livro: ");
-                                            editar.setGenero(ler.nextLine());
-                                            System.out.println("Digite o Autor: ");
-                                            editar.setAutor(ler.nextLine());
-                                            System.out.println("Digite a Editora: ");
-                                            editar.setEditora(ler.nextLine());
-                                            System.out.println("Digite o  Ano: ");
-                                            editar.setAno(ler.nextLine());
-                                            editar.setTipo(1);
-                                            biblioteca.manipularLivrosFisicos.editarLivrofisico(editar, livroArray);
+                                            biblioteca.manipularLivrosFisicos.listarLivrosFisicos();
+                                            System.out.println("Digite o index do livro que deseja editar: ");
+                                            index = ler.nextInt();
+                                            ler.nextLine();
+
+                                            if(biblioteca.manipularLivrosFisicos.buscaLivrosFisicos(index) != null){
+                                                Livro editar = new Livro();
+
+                                                editar.setIdLivro(biblioteca.getContadorDeLivros());
+                                                System.out.println("Digite o titulo do livro: ");
+                                                editar.setTitulo(ler.nextLine());
+                                                System.out.println("Digite o genero do livro: ");
+                                                editar.setGenero(ler.nextLine());
+                                                System.out.println("Digite o Autor: ");
+                                                editar.setAutor(ler.nextLine());
+                                                System.out.println("Digite a Editora: ");
+                                                editar.setEditora(ler.nextLine());
+                                                System.out.println("Digite o Ano: ");
+                                                editar.setAno(ler.nextLine());
+                                                editar.setTipo(1);
+                                                biblioteca.manipularLivrosFisicos.editarLivrofisico(index, editar);
+
+                                            }else{
+                                                System.out.println("Livro não encontrado!");
+                                            }
                                         }
                                         case 2 -> {
-                                            Livro editar = new Livro();
-                                            editar.setIdLivro(biblioteca.getContadorDeLivros());
-                                            System.out.println("Digite o titulo do livro: ");
-                                            editar.setTitulo(ler.nextLine());
-                                            System.out.println("Digite o genero do livro: ");
-                                            editar.setGenero(ler.nextLine());
-                                            System.out.println("Digite o Autor: ");
-                                            editar.setAutor(ler.nextLine());
-                                            System.out.println("Digite a Editora: ");
-                                            editar.setEditora(ler.nextLine());
-                                            System.out.println("Digite o  Ano: ");
-                                            editar.setAno(ler.nextLine());
-                                            editar.setTipo(2);
-                                            biblioteca.manipularEbooks.editarEbook(editar, livroArray);
+
+                                            biblioteca.manipularEbooks.listarEbooks();
+                                            System.out.println("Digite o index do livro que deseja editar: ");
+                                            index = ler.nextInt();
+                                            ler.nextLine();
+
+                                            if(biblioteca.manipularEbooks.buscaEbooks(index) != null){
+                                                Livro editar = new Livro();
+
+                                                editar.setIdLivro(biblioteca.getContadorDeLivros());
+                                                System.out.println("Digite o titulo do livro: ");
+                                                editar.setTitulo(ler.nextLine());
+                                                System.out.println("Digite o genero do livro: ");
+                                                editar.setGenero(ler.nextLine());
+                                                System.out.println("Digite o Autor: ");
+                                                editar.setAutor(ler.nextLine());
+                                                System.out.println("Digite a Editora: ");
+                                                editar.setEditora(ler.nextLine());
+                                                System.out.println("Digite o Ano: ");
+                                                editar.setAno(ler.nextLine());
+                                                editar.setTipo(2);
+                                                biblioteca.manipularEbooks.editarEbook(index, editar);
+
+                                            }else{
+                                                System.out.println("Livro não encontrado!");
+                                            }
+
                                         }
                                         default -> {
                                             System.err.println("Valor invalido!");
@@ -349,7 +383,6 @@ public class Main {
                                 break;
 
                             case 4:
-
                                 do {
                                     System.out.println("Digite o Tipo (1- Físico / 2- Ebook) ");
                                     tipoDeLivro = ler.nextInt();
@@ -369,17 +402,13 @@ public class Main {
                                         }
                                     }
                                 } while (tipoDeLivro < 1 || tipoDeLivro > 2);
-                                System.out.println("Livros listados com sucesso!");
                                 break;
 
                             case 5:
-
                                 do {
                                     System.out.println("Digite o Tipo (1- Físico / 2- Ebook) ");
                                     tipoDeLivro = ler.nextInt();
                                     ler.nextLine();
-//                                        como deseja pesquisar o livro!!!!
-//                                    Livro livroArray = retorno da pesquisa;
                                     switch (tipoDeLivro) {
                                         case 1 -> {
                                             System.out.println("Lista dos livros físicos: ");
@@ -406,73 +435,76 @@ public class Main {
                                 } while (tipoDeLivro < 1 || tipoDeLivro > 2);
                                 System.out.println("Livro editado com sucesso!");
                                 break;
+                            case 6:
+                                System.out.println("Voltando ao menu anterior.");
+                                break;
                             default:
                                 System.err.println("Opção invalida.");
+                                break;
                         }
-
-
-                    } while (continua);
+                    } while (opcao < 1 || opcao > 6);
 
                 }
 
                 case 2 ->{
-                    System.out.println("Selecione a forma como quer buscar o empréstimo");
-                    System.out.println("Escolha uma opção: ");
-                    System.out.println("[1] - Pesquisar cpf de usuário.");
-                    System.out.println("[2] - Pesquisar por título.");
-                    System.out.println("[3] - Pesquisar por nome do usuário.");
-                    System.out.println("[9] - Sair.");
-                    opcao = ler.nextInt();
-                    ler.nextLine();
-
-                    switch (opcao) {
-                        case 1 -> {
-                            String cpf;
-                            System.out.println("Digite o cpf do usuário: ");
-                            cpf = ler.nextLine();
-                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-                                if (biblioteca.getListaEmprestimos().get(i).getPessoa().getCpf().equals(cpf)) {
-                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-                                } else {
-                                    System.out.println("Não existem empréstimos para esse cpf.");
-                                }
-                            }
-                        }
-                        case 2 -> {
-                            String titulo;
-                            System.out.println("Digite o titulo que deseja buscar: ");
-                            titulo = ler.nextLine();
-                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-                                if (biblioteca.getListaEmprestimos().get(i).getLivro.getTitulo().equals(titulo)) {
-                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-                                } else {
-                                    System.out.println("Não existem empréstimos para esse título.");
-                                }
-                            }
-                        }
-                        case 3 -> {
-                            String nome;
-                            System.out.println("Digite o nome do usuário que deseja buscar: ");
-                            nome = ler.nextLine();
-                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-                                if (biblioteca.getListaEmprestimos().get(i).getPessoa.getNome().equals(nome)) {
-                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-                                } else {
-                                    System.out.println("Não existem empréstimos para essa pessoa.");
-                                }
-                            }
-                        }
-                        case 9 -> {
-                            default -> {
-                                System.err.println("Opção Invalida!");
-                            }
-
-                        }
-                    }
+//                    System.out.println("Selecione a forma como quer buscar o empréstimo");
+//                    System.out.println("Escolha uma opção: ");
+//                    System.out.println("[1] - Pesquisar cpf de usuário.");
+//                    System.out.println("[2] - Pesquisar por título.");
+//                    System.out.println("[3] - Pesquisar por nome do usuário.");
+//                    System.out.println("[9] - Sair.");
+//                    opcao = ler.nextInt();
+//                    ler.nextLine();
+//
+//                    switch (opcao) {
+//                        case 1 -> {
+//                            String cpf;
+//                            System.out.println("Digite o cpf do usuário: ");
+//                            cpf = ler.nextLine();
+//                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
+//                                if (biblioteca.getListaEmprestimos().get(i).getPessoa().getCpf().equals(cpf)) {
+//                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
+//                                } else {
+//                                    System.out.println("Não existem empréstimos para esse cpf.");
+//                                }
+//                            }
+//                        }
+//                        case 2 -> {
+//                            String titulo;
+//                            System.out.println("Digite o titulo que deseja buscar: ");
+//                            titulo = ler.nextLine();
+//                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
+//                                if (biblioteca.getListaEmprestimos().get(i).getLivro.getTitulo().equals(titulo)) {
+//                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
+//                                } else {
+//                                    System.out.println("Não existem empréstimos para esse título.");
+//                                }
+//                            }
+//                        }
+//                        case 3 -> {
+//                            String nome;
+//                            System.out.println("Digite o nome do usuário que deseja buscar: ");
+//                            nome = ler.nextLine();
+//                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
+//                                if (biblioteca.getListaEmprestimos().get(i).getPessoa.getNome().equals(nome)) {
+//                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
+//                                } else {
+//                                    System.out.println("Não existem empréstimos para essa pessoa.");
+//                                }
+//                            }
+//                        }
+//                        case 9 -> {
+//                            default -> {
+//                                System.err.println("Opção Invalida!");
+//                            }
+//
+//                        }
+//                    }
+                    System.out.println("Opção 02");
                 }
                 // BRUNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
                 case 3 ->{
-
+                    System.out.println("Opção 03");
                 }
                 case 4 ->{
                     continua = false;
@@ -481,4 +513,7 @@ public class Main {
             }
         }while (continua == true);
     }
+
+
+
 }

@@ -13,15 +13,16 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
     }
 
     public void removerLivroFisicoPorId(int index){
-
         biblioteca.getLivrosFisicos().remove(index);
     }
 
-    public void editarLivrofisico(Livro livroAtualizado, Livro livroArray){
+    public void editarLivrofisico(int index, Livro livroAtualizado){
+        Livro livroArray = biblioteca.getLivrosFisicos().get(index);
         livroArray.setTitulo(livroAtualizado.getTitulo());
         livroArray.setGenero(livroAtualizado.getGenero());
         livroArray.setAutor(livroAtualizado.getAutor());
         livroArray.setEditora(livroAtualizado.getEditora());
+        livroArray.setAno(livroAtualizado.getAno());
         livroArray.setTitulo(livroAtualizado.getAno());
     }
 
@@ -29,7 +30,8 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
         int contador = 0;
         if(biblioteca.getLivrosFisicos().isEmpty()){
             System.out.println("Acervo de livros vazio.");
-        }{for (Livro livro: biblioteca.getLivrosFisicos()) {
+        } else{
+            for (Livro livro: biblioteca.getLivrosFisicos()) {
                 System.out.println("Index: " + contador);
                 livro.imprimirDadosLivro();
                 contador++;
@@ -43,21 +45,25 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
             if (biblioteca.getLivrosFisicos().get(i).getTitulo().toLowerCase().equals(busca.toLowerCase())) {
                 biblioteca.getLivrosFisicos().get(i).imprimirDadosLivro();
                 livro = biblioteca.getLivrosFisicos().get(i);
-            } else {
-                System.out.println("O livro não foi encontrado!");
             }
+        }
+        if (livro == null){
+            System.out.println("O livro não foi encontrado!");
         }
         return livro;
     }
 
-    public Livro buscaLivrosFisicos(int idLivro){
+    public Livro buscaLivrosFisicos(int index){
 
         Livro livroBuscado = null;
 
-        for (Livro livro:biblioteca.getLivrosFisicos()) {
-            if(livro.getIdLivro() == idLivro){
-                livroBuscado = livro;
+        for (int i = 0; i < biblioteca.getLivrosFisicos().size(); i++) {
+            if (i == index) {
+                livroBuscado = biblioteca.getLivrosFisicos().get(i);
             }
+        }
+        if (livroBuscado == null){
+            System.out.println("O livro não foi encontrado!");
         }
 
         return livroBuscado;

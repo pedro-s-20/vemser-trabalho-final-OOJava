@@ -15,20 +15,10 @@ public class ManipularUsuarios {
         biblioteca.getListaDeUsuarios().remove(indice);
     }
 
-    public void editarUsuarios(int indice, Usuario usuario){
-        Usuario usuarioBusca = biblioteca.getListaDeUsuarios().get(indice);
-        usuarioBusca.setNome(usuario.getNome());
-        usuarioBusca.setCpf(usuario.getCpf());
-        usuarioBusca.setCep(usuario.getCep());
-        usuarioBusca.setLogradouro(usuario.getLogradouro());
-        usuarioBusca.setNumero(usuario.getNumero());
-        usuarioBusca.setTelefone(usuario.getTelefone());
-    }
-
     public void listarUsuarios(){
         if(biblioteca.getListaDeUsuarios().isEmpty()){
             System.out.println("Sem usuários cadastrados.");
-        }{
+        }else{
             biblioteca.getListaDeUsuarios().stream().forEach(usuario -> usuario.imprimir());
         }
     }
