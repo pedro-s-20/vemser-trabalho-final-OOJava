@@ -12,23 +12,30 @@ public class ManipularAlugueis {
         emprestimo.setFinalizado(false);
     }
 
-    public void removerAluguel(int idEmprestimo){
-        biblioteca.getListaEmprestimos().remove(idEmprestimo);
+    public void removerAluguel(int index){
+        biblioteca.getListaEmprestimos().remove(index);
     }
 
     public void editarEmprestimo(int indice, Aluguel emprestimo){
         Aluguel emprestimoBusca = biblioteca.getListaEmprestimos().get(indice);
         emprestimoBusca.setValorMulta(emprestimo.getValorMulta());
-        emprestimoBusca.setLivroEmprestimo(emprestimo.getLivroEmprestimo());
-        emprestimoBusca.setIdAluguel(emprestimo.getIdAluguel());
+        emprestimoBusca.setFinalizado(emprestimo.isFinalizado());
         emprestimoBusca.setQuantidadeDeDias(emprestimo.getQuantidadeDeDias());
     }
 
     public void listarEmprestimos(){
+        int contador = 0;
+
         if(biblioteca.getListaEmprestimos().isEmpty()){
             System.out.println("Sem aluguéis cadastrados.");
-        }{
-            biblioteca.getListaEmprestimos().stream().forEach(aluguel -> aluguel.imprimeAluguel());
+        }else{
+
+            for (Aluguel aluguel:biblioteca.getListaEmprestimos()) {
+                System.out.println("Index: " + contador);
+                aluguel.imprimeAluguel();
+                contador++;
+            }
+            System.out.println("Esses são os aluguéis no momento.");
         }
     }
 

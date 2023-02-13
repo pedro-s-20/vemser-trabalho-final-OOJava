@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Imprimir lista de usuário verificando seu tipo (com cast) aplicado. Também alguns ajustes na tela inicial em parte de pequenas verificações.">
+    <list default="true" id="643a740d-024f-4f03-afb2-fa0fc143f110" name="Changes" comment="Alterado a permissão de acessar o menu de Usuários (somente para Gestor ou Administrador). Adicionado a função de que possa cadastrar um usuário nesse menu. Corrigido problema na impressão das informações de usuário. Pequenos ajustes de métodos.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrativo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrativo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Estudante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estudante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gestor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gestor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aluguel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aluguel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularLivrosFisicos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManipularUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularUsuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Professor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManipularAlugueis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManipularAlugueis.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676259419964</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Alterado a permissão de acessar o menu de Usuários (somente para Gestor ou Administrador). Adicionado a função de que possa cadastrar um usuário nesse menu. Corrigido problema na impressão das informações de usuário. Pequenos ajustes de métodos.">
+      <created>1676263596216</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676263596216</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,6 +138,7 @@
     <MESSAGE value="Pequenas alterações e correção de métodos dos contadores." />
     <MESSAGE value="Ajuste da tela inicial." />
     <MESSAGE value="Imprimir lista de usuário verificando seu tipo (com cast) aplicado. Também alguns ajustes na tela inicial em parte de pequenas verificações." />
-    <option name="LAST_COMMIT_MESSAGE" value="Imprimir lista de usuário verificando seu tipo (com cast) aplicado. Também alguns ajustes na tela inicial em parte de pequenas verificações." />
+    <MESSAGE value="Alterado a permissão de acessar o menu de Usuários (somente para Gestor ou Administrador). Adicionado a função de que possa cadastrar um usuário nesse menu. Corrigido problema na impressão das informações de usuário. Pequenos ajustes de métodos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Alterado a permissão de acessar o menu de Usuários (somente para Gestor ou Administrador). Adicionado a função de que possa cadastrar um usuário nesse menu. Corrigido problema na impressão das informações de usuário. Pequenos ajustes de métodos." />
   </component>
 </project>

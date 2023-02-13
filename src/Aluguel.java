@@ -20,8 +20,24 @@ public class Aluguel{
 
     public void imprimeAluguel(){
         System.out.println("Aluguel de ID: " + getIdAluguel());
-        System.out.println("----------------------------------");
         livroEmprestimo.imprimirDadosLivro();
+        if(isFinalizado()){
+            System.out.println("Empréstimo já finalizado.");
+            System.out.println("Estava emprestado para: " + getPessoa().getNome());
+            System.out.println("----------------------------------");
+        }else{
+            System.out.println("Está emprestado para: " + getPessoa().getNome());
+            System.out.println("Dias restantes que ela tem para devolver: " + getQuantidadeDeDias());
+            System.out.println("----------------------------------");
+        }
+
+    }
+
+    public void editarAluguel(Aluguel aluguelEditado, int index){
+        Aluguel aluguelArray = biblioteca.getListaEmprestimos().get(index);
+        aluguelArray.setQuantidadeDeDias(aluguelEditado.getQuantidadeDeDias());
+        aluguelArray.setFinalizado(aluguelEditado.isFinalizado());
+        aluguelArray.setValorMulta(aluguelEditado.getValorMulta());
     }
 
     public Usuario getPessoa() {

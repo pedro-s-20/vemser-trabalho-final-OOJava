@@ -220,7 +220,7 @@ public class Main {
         Scanner ler = new Scanner(System.in);
         boolean livroLiberado = false, continua = true;
         int opcao = 0;
-        int idLivro,tipoDeLivro, index;
+        int entradaUsu, tipoDeLivro, index;
 
         do {
             System.out.println("Digite a opção desejada:");
@@ -447,60 +447,137 @@ public class Main {
                 }
 
                 case 2 ->{
-//                    System.out.println("Selecione a forma como quer buscar o empréstimo");
-//                    System.out.println("Escolha uma opção: ");
-//                    System.out.println("[1] - Pesquisar cpf de usuário.");
-//                    System.out.println("[2] - Pesquisar por título.");
-//                    System.out.println("[3] - Pesquisar por nome do usuário.");
-//                    System.out.println("[9] - Sair.");
-//                    opcao = ler.nextInt();
-//                    ler.nextLine();
+                    System.out.println("Escolha uma opção: ");
+                    System.out.println("[1] - Realizar um empréstimo");
+                    System.out.println("[2] - Devolver um livro");
+                    System.out.println("[3] - Listar empréstimos");
+                    System.out.println("[4] - Remover um empréstimo da lista (somente Administrador ou Gestor)");
+                    System.out.println("[5] - Editar um empréstimo (somente Administrador ou Gestor)");
+                    System.out.println("[6] - Voltar");
+                    opcao = ler.nextInt();
+                    ler.nextLine();
+
+                    switch(opcao){
+                        case 1->{
+//                            System.out.println("Escolha como deseja pesquisar o empréstimo:");
+//                            System.out.println("[1] - Pesquisar cpf de usuário.");
+//                            System.out.println("[2] - Pesquisar por título.");
+//                            System.out.println("[3] - Pesquisar por nome do usuário.");
+//                            System.out.println("[9] - Sair.");
+//                            opcao = ler.nextInt();
+//                            ler.nextLine();
 //
-//                    switch (opcao) {
-//                        case 1 -> {
-//                            String cpf;
-//                            System.out.println("Digite o cpf do usuário: ");
-//                            cpf = ler.nextLine();
-//                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-//                                if (biblioteca.getListaEmprestimos().get(i).getPessoa().getCpf().equals(cpf)) {
-//                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-//                                } else {
-//                                    System.out.println("Não existem empréstimos para esse cpf.");
+//                            switch (opcao) {
+//                                case 1 -> {
+//                                    String cpf;
+//                                    System.out.println("Digite o cpf do usuário: ");
+//                                    cpf = ler.nextLine();
+//                                    for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
+//                                        if (biblioteca.getListaEmprestimos().get(i).getPessoa().getCpf().equals(cpf)) {
+//                                            biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
+//                                        } else {
+//                                            System.out.println("Não existem empréstimos para esse cpf.");
+//                                        }
+//                                    }
 //                                }
-//                            }
-//                        }
-//                        case 2 -> {
-//                            String titulo;
-//                            System.out.println("Digite o titulo que deseja buscar: ");
-//                            titulo = ler.nextLine();
-//                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-//                                if (biblioteca.getListaEmprestimos().get(i).getLivro.getTitulo().equals(titulo)) {
-//                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-//                                } else {
-//                                    System.out.println("Não existem empréstimos para esse título.");
+//                                case 2 -> {
+//                                    String titulo;
+//                                    System.out.println("Digite o titulo que deseja buscar: ");
+//                                    titulo = ler.nextLine();
+//                                    for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
+//                                        if (biblioteca.getListaEmprestimos().get(i).getLivro.getTitulo().equals(titulo)) {
+//                                            biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
+//                                        } else {
+//                                            System.out.println("Não existem empréstimos para esse título.");
+//                                        }
+//                                    }
 //                                }
-//                            }
-//                        }
-//                        case 3 -> {
-//                            String nome;
-//                            System.out.println("Digite o nome do usuário que deseja buscar: ");
-//                            nome = ler.nextLine();
-//                            for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
-//                                if (biblioteca.getListaEmprestimos().get(i).getPessoa.getNome().equals(nome)) {
-//                                    biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
-//                                } else {
-//                                    System.out.println("Não existem empréstimos para essa pessoa.");
+//                                case 3 -> {
+//                                    String nome;
+//                                    System.out.println("Digite o nome do usuário que deseja buscar: ");
+//                                    nome = ler.nextLine();
+//                                    for (int i = 0; i < biblioteca.listaDeEmprestimos.size(); i++) {
+//                                        if (biblioteca.getListaEmprestimos().get(i).getPessoa.getNome().equals(nome)) {
+//                                            biblioteca.getListaEmprestimos.get(i).imprimeAluguel();
+//                                        } else {
+//                                            System.out.println("Não existem empréstimos para essa pessoa.");
+//                                        }
+//                                    }
 //                                }
-//                            }
-//                        }
-//                        case 9 -> {
-//                            default -> {
-//                                System.err.println("Opção Invalida!");
-//                            }
+//                                case 9 -> {
+//                                    default -> {
+//                                        System.err.println("Opção Invalida!");
+//                                    }
 //
-//                        }
-//                    }
-                    System.out.println("Opção 02");
+//                                }
+//                            }
+                            //PENDENTE
+                            System.out.println("Pendente! - EMPRESTAR");
+                        }
+                        case 2->{
+                            //PENDENTE
+                            System.out.println("Pendente! - DEVOLVER");
+                        }
+                        case 3->{
+                            biblioteca.manipularAlugueis.listarEmprestimos();
+                        }
+                        case 4->{
+                            if (usuarioLogado.getTipoUsuario() == 3 || usuarioLogado.getTipoUsuario() == 4){
+                                biblioteca.manipularAlugueis.listarEmprestimos();
+                                System.out.println("Digite o index do empréstimo que deseja remover: ");
+                                index = ler.nextInt();
+                                ler.nextLine();
+                                if(index < 0 || index >= biblioteca.getListaEmprestimos().size()){
+                                    System.out.println("Valor inválido. Tente novamente.");
+                                }else{
+                                    biblioteca.manipularAlugueis.removerAluguel(index);
+                                    System.out.println("Registro de aluguel removido com sucesso!");
+                                }
+                            } else {
+                                System.out.println("Seu usuário não tem permissão para acessar essas opções. Contate o administrador.");
+                            }
+                        }
+                        case 5->{
+                            if (usuarioLogado.getTipoUsuario() == 3 || usuarioLogado.getTipoUsuario() == 4){
+                                biblioteca.manipularAlugueis.listarEmprestimos();
+                                System.out.println("Digite o index do empréstimo que deseja editar: ");
+                                index = ler.nextInt();
+                                ler.nextLine();
+                                if(index < 0 || index >= biblioteca.getListaEmprestimos().size()){
+                                    System.out.println("Valor inválido. Tente novamente.");
+                                }else{
+                                    Aluguel aluguelEditado = new Aluguel();
+                                    System.out.println("Digite o valor da multa desse aluguel: ");
+                                    aluguelEditado.setValorMulta(ler.nextDouble());
+                                    ler.nextLine();
+
+                                    System.out.println("O livro está emprestado? (1-sim, 2-não)");
+                                    entradaUsu = ler.nextInt();
+                                    if(entradaUsu == 1){
+                                        aluguelEditado.setFinalizado(false);
+                                    }else{
+                                        aluguelEditado.setFinalizado(true);
+                                    }
+
+                                    System.out.println("Digite a quantidade de dias desse aluguel: ");
+                                    aluguelEditado.setQuantidadeDeDias(ler.nextInt());
+                                    ler.nextLine();
+
+                                    biblioteca.manipularAlugueis.editarEmprestimo(index, aluguelEditado);
+                                    System.out.println("Livro editado com sucesso!");
+                                }
+                            } else {
+                                System.out.println("Seu usuário não tem permissão para acessar essas opções. Contate o administrador.");
+                            }
+                        }
+                        case 6->{
+                            System.out.println("Voltando ao menu anterior.");
+                        }
+                        default -> {
+                            System.err.println("Opção inválida, tente novamente.");
+                        }
+                    }
+
                 }
 
                 case 3 ->{
