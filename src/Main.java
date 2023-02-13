@@ -61,7 +61,7 @@ public class Main {
                         if (opcao < 1 || opcao > 5) {
                             System.err.println("Opção inválida. Tente novamente.");
                         }
-                    } while (opcao < 1 || opcao > 4);
+                    } while (opcao < 1 || opcao > 5);
 
                     switch (opcao) {
                         case 1:
@@ -77,12 +77,12 @@ public class Main {
                             System.out.println("Agora sobre o endereço");
                             System.out.println("Digite a rua: ");
                             estudante.setLogradouro(entradaUsu.nextLine());
+                            System.out.println("Digite o número: ");
+                            estudante.setNumero(entradaUsu.nextLine());
                             System.out.println("Digite o bairro: ");
                             estudante.setBairro(entradaUsu.nextLine());
                             System.out.println("Digite o CEP: ");
                             estudante.setCep(entradaUsu.nextLine());
-                            System.out.println("Digite o número: ");
-                            estudante.setNumero(entradaUsu.nextLine());
 
                             System.out.println("Digite o telefone: ");
                             estudante.setTelefone(entradaUsu.nextLine());
@@ -110,12 +110,12 @@ public class Main {
                             System.out.println("Agora sobre o endereço");
                             System.out.println("Digite a rua: ");
                             professor.setLogradouro(entradaUsu.nextLine());
+                            System.out.println("Digite o número: ");
+                            professor.setNumero(entradaUsu.nextLine());
                             System.out.println("Digite o bairro: ");
                             professor.setBairro(entradaUsu.nextLine());
                             System.out.println("Digite o CEP: ");
                             professor.setCep(entradaUsu.nextLine());
-                            System.out.println("Digite o número: ");
-                            professor.setNumero(entradaUsu.nextLine());
 
                             System.out.println("Digite o telefone: ");
                             professor.setTelefone(entradaUsu.nextLine());
@@ -142,12 +142,12 @@ public class Main {
                             System.out.println("Agora sobre o endereço");
                             System.out.println("Digite a rua: ");
                             gestor.setLogradouro(entradaUsu.nextLine());
+                            System.out.println("Digite o número: ");
+                            gestor.setNumero(entradaUsu.nextLine());
                             System.out.println("Digite o bairro: ");
                             gestor.setBairro(entradaUsu.nextLine());
                             System.out.println("Digite o CEP: ");
                             gestor.setCep(entradaUsu.nextLine());
-                            System.out.println("Digite o número: ");
-                            gestor.setNumero(entradaUsu.nextLine());
 
                             System.out.println("Digite o telefone: ");
                             gestor.setTelefone(entradaUsu.nextLine());
@@ -174,12 +174,12 @@ public class Main {
                             System.out.println("Agora sobre o endereço");
                             System.out.println("Digite a rua: ");
                             administrativo.setLogradouro(entradaUsu.nextLine());
+                            System.out.println("Digite o número: ");
+                            administrativo.setNumero(entradaUsu.nextLine());
                             System.out.println("Digite o bairro: ");
                             administrativo.setBairro(entradaUsu.nextLine());
                             System.out.println("Digite o CEP: ");
                             administrativo.setCep(entradaUsu.nextLine());
-                            System.out.println("Digite o número: ");
-                            administrativo.setNumero(entradaUsu.nextLine());
 
                             System.out.println("Digite o telefone: ");
                             administrativo.setTelefone(entradaUsu.nextLine());
@@ -742,8 +742,6 @@ public class Main {
                                         buscaUsuario.setNome(ler.nextLine());
                                         System.out.println("Digite o novo cpf do usuário: ");
                                         buscaUsuario.setCpf(ler.nextLine());
-                                        System.out.println("Digite o novo nome do usuário: ");
-                                        buscaUsuario.setTelefone(ler.nextLine());
                                         System.out.println("Digite o novo logradouro do usuário: ");
                                         buscaUsuario.setLogradouro(ler.nextLine());
                                         System.out.println("Digite o novo número: ");

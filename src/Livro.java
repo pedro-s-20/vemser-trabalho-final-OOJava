@@ -84,7 +84,12 @@ public class Livro {
         } else {
             System.out.println("Tipo: Ebook");
         }
-        System.out.println("Disponivel: " + disponivel);
+        if (disponivel){
+            System.out.println("Disponibilidade: Disponível");
+        } else {
+            System.out.println("Disponibilidade: Alugado");
+        }
+
         System.out.println("--------------------------------------------------------------");
 
     }

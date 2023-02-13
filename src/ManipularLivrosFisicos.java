@@ -97,8 +97,8 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
     public void devolverLivro(String cpf, int idEmprestimo){
         if (biblioteca.manipularUsuarios.buscaUsuario(cpf) != null) {
             if (idEmprestimo <= biblioteca.getListaEmprestimos().size()) {
-                biblioteca.getListaEmprestimos().get(idEmprestimo).getLivroEmprestimo().setDisponivel(true);
-                biblioteca.getListaEmprestimos().get(idEmprestimo).setFinalizado(true);
+                biblioteca.getListaEmprestimos().get(idEmprestimo - 1).getLivroEmprestimo().setDisponivel(true);
+                biblioteca.getListaEmprestimos().get(idEmprestimo - 1).setFinalizado(true);
                 System.out.println("O livro foi devolvido com sucesso!");
             } else {
                 System.out.println("O número de protocolo não foi encontrado, tente novamente!");
