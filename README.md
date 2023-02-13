@@ -4,7 +4,7 @@ Nomes: Bruno Rodrigues, Felipe Sandim e Pedro Sousa.
 
 O objetivo do nosso trabalho era criar o back-end de uma biblioteca utilizando a linguagem java e os padrões de orientação a objeto.  
 #### Segue abaixo o diagrama de classes do projeto:  
-
+![diagrama-de-classes](https://github.com/brunorodriguesdias/vemser-trabalho-final/blob/main/Documentos/diagrama-de-classes.jpg)
 
 
 
