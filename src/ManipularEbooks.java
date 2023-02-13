@@ -11,8 +11,8 @@ public class ManipularEbooks implements EmprestimoEDevolucaoDeLivro {
         biblioteca.setContadorDeLivros();
     }
 
-    public void removerEbook(String ebook){
-        biblioteca.getLivrosFisicos().remove(ebook);
+    public void removerEbook(int index){
+        biblioteca.getLivrosFisicos().remove(index);
     }
 
 
@@ -26,11 +26,13 @@ public class ManipularEbooks implements EmprestimoEDevolucaoDeLivro {
 
     public void listarEbooks(){
         int contador = 0;
-        if(biblioteca.getListaEmprestimos().isEmpty()){
+        if(biblioteca.getEbooks().isEmpty()){
             System.out.println("Acervo de e-books vazio.");
         }{
             for (Livro livro: biblioteca.getEbooks()) {
-
+                System.out.println("Index: " + contador);
+                livro.imprimirDadosLivro();
+                contador++;
             }
         }
     }

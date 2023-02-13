@@ -26,7 +26,7 @@ public class ManipularUsuarios {
     }
 
     public void listarUsuarios(){
-        if(biblioteca.getListaEmprestimos().isEmpty()){
+        if(biblioteca.getListaDeUsuarios().isEmpty()){
             System.out.println("Sem usuários cadastrados.");
         }{
             biblioteca.getListaDeUsuarios().stream().forEach(usuario -> usuario.imprimir());

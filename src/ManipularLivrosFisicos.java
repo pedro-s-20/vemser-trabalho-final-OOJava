@@ -12,8 +12,9 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
         biblioteca.setContadorDeLivros();
     }
 
-    public void removerLivroFisicoPorId(String idLivro){
-        biblioteca.getLivrosFisicos().remove(idLivro);
+    public void removerLivroFisicoPorId(int index){
+
+        biblioteca.getLivrosFisicos().remove(index);
     }
 
     public void editarLivrofisico(Livro livroAtualizado, Livro livroArray){
@@ -25,10 +26,14 @@ public class ManipularLivrosFisicos implements EmprestimoEDevolucaoDeLivro {
     }
 
     public void listarLivrosFisicos(){
-        if(biblioteca.getListaEmprestimos().isEmpty()){
-            System.out.println("Acervo de livros físicos vazio.");
-        }{
-            biblioteca.getLivrosFisicos().stream().forEach(livroFisico -> livroFisico.imprimirDadosLivro());
+        int contador = 0;
+        if(biblioteca.getLivrosFisicos().isEmpty()){
+            System.out.println("Acervo de livros vazio.");
+        }{for (Livro livro: biblioteca.getLivrosFisicos()) {
+                System.out.println("Index: " + contador);
+                livro.imprimirDadosLivro();
+                contador++;
+            }
         }
     }
 
